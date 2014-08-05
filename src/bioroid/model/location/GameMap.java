@@ -167,7 +167,7 @@ public class GameMap extends ModelObject implements TileBasedMap {
 
         for (; n > 0; --n) {
             // visit(x, y);
-            System.out.println("");
+            System.out.println("Visting x:" + x + " y:" + y);
             if (error > 0) {
                 x += x_inc;
                 error -= dy;
