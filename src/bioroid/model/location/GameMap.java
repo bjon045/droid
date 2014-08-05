@@ -152,4 +152,34 @@ public class GameMap extends ModelObject implements TileBasedMap {
         return false;
     }
 
+    public void lineOfSightVisitor(int sourceX, int sourceY, int x1, int y1) {
+        // TODO: implement callback on visitor object/map
+        int dx = Math.abs(x1 - sourceX);
+        int dy = Math.abs(y1 - sourceY);
+        int x = sourceX;
+        int y = sourceY;
+        int n = 1 + dx + dy;
+        int x_inc = (x1 > sourceX) ? 1 : -1;
+        int y_inc = (y1 > sourceY) ? 1 : -1;
+        int error = dx - dy;
+        dx *= 2;
+        dy *= 2;
+
+        for (; n > 0; --n) {
+            // visit(x, y);
+            System.out.println("");
+            if (error > 0) {
+                x += x_inc;
+                error -= dy;
+            } else if (error < 0) {
+                y += y_inc;
+                error += dx;
+            } else {
+                x += x_inc;
+                y += y_inc;
+                n--;
+            }
+        }
+    }
+
 }
