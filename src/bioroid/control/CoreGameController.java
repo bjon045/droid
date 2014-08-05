@@ -58,7 +58,7 @@ public class CoreGameController {
             // after a successful move then all remaining actors are updated
 
             GameCharacter activeCharacter = CharacterUtils.getMainCharacter();
-            Location lastMoved = activeCharacter.getLocation().copy();
+            Location lastMoved = activeCharacter.getLocation();
 
             boolean moved = moveActiveCharacter(container, gameMap, activeCharacter);
 
@@ -68,14 +68,14 @@ public class CoreGameController {
 
             // update map view as we are not in combat and the main character
             // has moved.
-            GameHolder.viewPoint = activeCharacter.getLocation().copy();
+            GameHolder.viewPoint.updateWith(activeCharacter.getLocation());
 
             // update the rest of the party. This is most likely to just make
             // them follow the main character.
             List<GameCharacter> pcs = GameHolder.currentGame.getPlayerCharacters();
             for (GameCharacter pc : pcs) {
                 if (pc != activeCharacter) {
-                    Location currentLocation = pc.getLocation().copy();
+                    Location currentLocation = pc.getLocation();
                     gotoLocation(pc, lastMoved, gameMap);
                     lastMoved = currentLocation;
                 }
@@ -108,25 +108,21 @@ public class CoreGameController {
         Action action = GameHolder.currentAction;
 
         Location currentLocation = activeCharacter.getLocation();
-        Location newLocation = null;
+        Location newLocation = currentLocation.copy();
 
         switch (action.getActionType()) {
         case PASS:
             break;
         case MOVE_WEST:
-            newLocation = currentLocation.copy();
             newLocation.decrementX();
             break;
         case MOVE_EAST:
-            newLocation = currentLocation.copy();
             newLocation.incrementX();
             break;
         case MOVE_NORTH:
-            newLocation = currentLocation.copy();
             newLocation.derementY();
             break;
         case MOVE_SOUTH:
-            newLocation = currentLocation.copy();
             newLocation.incrementY();
             break;
         case MOVE:

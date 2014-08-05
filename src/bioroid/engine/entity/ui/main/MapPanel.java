@@ -1,7 +1,15 @@
 package bioroid.engine.entity.ui.main;
 
+import static bioroid.Constants.RESOURCE_FOLDER;
+import static bioroid.Constants.TILE_SIZE;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
+import org.newdawn.slick.SlickException;
 
 import bioroid.GameHolder;
 import bioroid.control.action.Action;
@@ -13,14 +21,6 @@ import bioroid.engine.entity.listener.EntityListener;
 import bioroid.model.character.GameCharacter;
 import bioroid.model.location.GameMap;
 import bioroid.model.location.Location;
-
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Image;
-import org.newdawn.slick.SlickException;
-
-import static bioroid.Constants.RESOURCE_FOLDER;
-import static bioroid.Constants.TILE_SIZE;
 
 public class MapPanel extends Entity {
 
@@ -113,7 +113,7 @@ public class MapPanel extends Entity {
         // note: this is just an optimisation for when the viewpoint has not
         // moved.
         if (!viewPoint.equals(GameHolder.viewPoint)) {
-            viewPoint = GameHolder.viewPoint.copy();
+            viewPoint.updateWith(GameHolder.viewPoint);
             // calculate what part of the map should be shown
             updateOffsets();
         }
@@ -175,7 +175,9 @@ public class MapPanel extends Entity {
             y = y + mapPanel.mapStartY;
 
             System.out.println("Clicked on location x:" + x + " y:" + y);
-            GameHolder.currentAction = new Action(ActionType.MOVE, new Location(x, y));
+            if (!gameMap.isMoveBlocked(x, y, true)) {
+                GameHolder.currentAction = new Action(ActionType.MOVE, new Location(x, y));
+            }
 
         }
 

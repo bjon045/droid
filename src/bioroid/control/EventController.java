@@ -2,8 +2,6 @@ package bioroid.control;
 
 import java.util.List;
 
-import org.newdawn.slick.GameContainer;
-
 import bioroid.GameHolder;
 import bioroid.model.ModelResources;
 import bioroid.model.character.GameCharacter;
@@ -18,7 +16,7 @@ import bioroid.utils.CharacterUtils;
  */
 public class EventController {
 
-    public void update(GameContainer container) {
+    public void update() {
 
         GameCharacter mainCharacter = CharacterUtils.getMainCharacter();
         List<Event> events = ModelResources.events.getEvents();
@@ -28,6 +26,7 @@ public class EventController {
 
         for (Event event : events) {
             for (TriggerPoint tp : event.getTriggerPoints()) {
+                System.out.println("TP test: X:" + tp.getLocation().getX() + " Y:" + tp.getLocation().getY());
                 if (tp.isTriggered(mainCharacter.getLocation())) {
                     System.out.println("Event Triggered: " + event.getCode());
                 }

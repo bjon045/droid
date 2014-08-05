@@ -48,6 +48,11 @@ public class Location {
         y--;
     }
 
+    public void updateWith(Location location) {
+        x = location.x;
+        y = location.y;
+    }
+
     public Location copy() {
         Location newLocation = new Location();
         newLocation.setX(x);

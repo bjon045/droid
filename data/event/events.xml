@@ -6,7 +6,7 @@
 	   <triggerPoint>
 	       <mapCode>MAP_START</mapCode>
 	       <location>
-	            <x>5</x>
+	            <x>7</x>
 	            <y>30</y>
 	       </location>
 	   </triggerPoint>
