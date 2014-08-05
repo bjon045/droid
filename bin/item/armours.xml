@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<armours>
+	<armour>
+		<code>SPACE_S</code>
+		<name>Space suit</name>
+		<description>The space suit is essential for surviving in outer space. One of the 5 layers of fabric that make up this suit provides shielding against ultraviolet radiation, however the suit itself offers little resistance to most weapons.</description>
+		<weight>10</weight>
+		<acAdjustment>0</acAdjustment>
+		<armourType>NORMAL</armourType>
+	</armour>
+	<armour>
+		<code>HS_SPACE_S</code>
+		<name>Hard shell space suit</name>
+		<description>Hard shell space suits are designed to operate in higher pressure environments. The titanium alumnim alloy that encases this suit also provides small amount of protect to it's wearer.</description>
+		<weight>50</weight>
+		<acAdjustment>1</acAdjustment>
+		<armourType>NORMAL</armourType>
+	</armour>
+	<armour>
+		<code>SMART_S</code>
+		<name>Smart suit</name>
+		<description>Smart suit.</description>
+		<weight>10</weight>
+		<acAdjustment>2</acAdjustment>
+		<armourType>NORMAL</armourType>
+	</armour>
+</armours>

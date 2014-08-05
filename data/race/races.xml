@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<races>
+	<race>
+		<code>TERRAN</code>
+		<name>Terran</name>
+		<description>"The descendants of a history both glorious and destructive, Terrans know better than anyone the power of rebirth and redemption. Theirs is the Homeworld of Man, and they are the root of us all." /b /b - Badinger's History of the Solar System</description>
+		<attributeModification>
+			<code>WISDOM</code>
+			<value>1</value>
+		</attributeModification>
+		<subrace>MUTANT</subrace>
+	</race>
+	<race>
+		<code>MARTIAN</code>
+		<name>Martian</name>
+		<description>The martian race.</description>
+	</race>
+	<race>
+		<code>VENUSIAN</code>
+		<name>Venusian</name>
+		<description>The venusian race.</description>
+	</race>
+	<race>
+		<code>MERCURIAN</code>
+		<name>Mercurian</name>
+		<description>The mercurian race.</description>
+		<attributeModification>
+			<code>STRENGTH</code>
+			<value>-1</value>
+		</attributeModification>
+		<attributeModification>
+			<code>CONSTITUTION</code>
+			<value>-1</value>
+		</attributeModification>
+		<attributeModification>
+			<code>CHARISMA</code>
+			<value>2</value>
+		</attributeModification>
+	</race>
+	<race>
+		<code>LUNARIAN</code>
+		<name>Lunarian</name>
+		<description>The lunarian race.</description>
+		<attributeModification>
+			<code>STRENGTH</code>
+			<value>-1</value>
+		</attributeModification>
+		<attributeModification>
+			<code>INTELLIGENCE</code>
+			<value>1</value>
+		</attributeModification>
+	</race>
+	<race>
+		<code>TUBER</code>
+		<name>Tuber</name>
+		<description>Tailored to the desires of their creators. The genetic manipulation typically results in a featureless face.</description>
+		<attributeModification>
+			<code>CHARISMA</code>
+			<value>-1</value>
+		</attributeModification>
+	</race>
+	<race>
+		<code>DESERT_DWELLER</code>
+		<name>Desert Dweller</name>
+		<description>Raise desert apes on the surface of mars.</description>
+		<attributeModification>
+			<code>STRENGTH</code>
+			<value>2</value>
+		</attributeModification>
+		<attributeModification>
+			<code>DEXTERITY</code>
+			<value>2</value>
+		</attributeModification>
+		<attributeModification>
+			<code>INTELLIGENCE</code>
+			<value>-2</value>
+		</attributeModification>
+		<attributeModification>
+			<code>TECHNOLOGY</code>
+			<value>-2</value>
+		</attributeModification>
+		<attributeModification>
+			<code>CHARISMA</code>
+			<value>-1</value>
+		</attributeModification>
+	</race>
+	
+</races>

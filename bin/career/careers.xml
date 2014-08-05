@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<careers>
+	<career>
+		<code>WARRIOR</code>
+		<name>Warrior</name>
+		<description>There is no one better in the heat of battle.</description>
+		<attributeRequirement>
+			<code>STRENGTH</code>
+			<value>6</value>
+		</attributeRequirement>
+		<attributeRequirement>
+			<code>DEXTERITY</code>
+			<value>6</value>
+		</attributeRequirement>
+		<hitsPerLevel>10</hitsPerLevel>
+	</career>
+	<career>
+		<code>ROCKETJOCK</code>
+		<name>Rocket Jock</name>
+		<description>Space ace.</description>
+		<attributeRequirement>
+			<code>DEXTERITY</code>
+			<value>6</value>
+		</attributeRequirement>
+		<hitsPerLevel>8</hitsPerLevel>
+	</career>
+	<career>
+		<code>MEDIC</code>
+		<name>Medic</name>
+		<description>Essential for treating wounds after battle.</description>
+		<attributeRequirement>
+			<code>WISDOM</code>
+			<value>6</value>
+		</attributeRequirement>
+		<attributeRequirement>
+			<code>INTELLIGENCE</code>
+			<value>6</value>
+		</attributeRequirement>
+		<hitsPerLevel>6</hitsPerLevel>
+	</career>
+	<career>
+		<code>ENGINEER</code>
+		<name>Engineer</name>
+		<description>Fixing things.</description>
+		<attributeRequirement>
+			<code>TECHNOLOGY</code>
+			<value>7</value>
+		</attributeRequirement>
+		<hitsPerLevel>6</hitsPerLevel>
+	</career>
+	<career>
+		<code>ROGUE</code>
+		<name>Rogue</name>
+		<description>Hiding in shadows, security systems expert.</description>
+		<attributeRequirement>
+			<code>DEXTERITY</code>
+			<value>7</value>
+		</attributeRequirement>
+		<hitsPerLevel>6</hitsPerLevel>
+	</career>
+</careers>

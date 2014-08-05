@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<weapons>
+	<weapon>
+		<code>BOLT_P</code>
+		<name>Bolt Pistol</name>
+		<description>Nicknamed "Bolter". The Bolt Pistol is cheap and easily produced which has made it the most commonly available weapon in the Solar System.</description>
+		<weight>5</weight>
+		<shots>4</shots>
+		<damageDice>6</damageDice>
+		<damageModifier>0</damageModifier>
+		<range>15</range>
+		<ammo>255</ammo>
+		<weaponType>GUN</weaponType>
+	</weapon>
+</weapons>

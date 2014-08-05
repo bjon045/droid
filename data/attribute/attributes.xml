@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<attributes>
+	<attribute>
+		<code>STRENGTH</code>
+		<name>STRENGTH</name>
+		<description>Determines melee damage and accuracy and weight allowance.</description>
+	</attribute>
+	<attribute>
+		<code>DEXTERITY</code>
+		<name>DEXTERITY</name>
+		<description>Determines armour rating and range weapon accuracy.</description>
+	</attribute>
+	<attribute>
+		<code>CONSTITUTION</code>
+		<name>CONSTITUTION</name>
+		<description>Determines hit points.</description>
+	</attribute>
+	<attribute>
+		<code>INTELLIGENCE</code>
+		<name>INTELLIGENCE</name>
+		<description>Determines skill points.</description>
+	</attribute>
+	<attribute>
+		<code>WISDOM</code>
+		<name>WISDOM</name>
+		<description>Affects wisdom related skills.</description>
+	</attribute>
+	<attribute>
+		<code>CHARISMA</code>
+		<name>CHARISMA</name>
+		<description>Determines reaction bonuses.</description>
+	</attribute>
+	<attribute>
+		<code>TECHNOLOGY</code>
+		<name>TECHNOLOGY</name>
+		<description>Affects technology related skills.</description>
+	</attribute>
+</attributes>

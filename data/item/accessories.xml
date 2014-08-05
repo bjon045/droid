@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<accessories>
+	<accessory>
+		<code>JET_PACK</code>
+		<name>Jet pack</name>
+		<description>The Jet-pack allows the user to elevate t</description>
+		<weight>10</weight>
+	</accessory>
+</accessories>

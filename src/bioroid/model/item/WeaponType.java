@@ -1,0 +1,5 @@
+package bioroid.model.item;
+
+public enum WeaponType {
+    GUN, ROCKET, LASER, ROCKET_LAUNCHER, PLASMA_THROWER, GRENADE, FLASH_GRENADE, STUN_GRENADE, CHAFF_GRENADE;
+}

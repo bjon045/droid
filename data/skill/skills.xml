@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<skills>
+	<skill>
+		<code>MATH</code>
+		<name>Mathematics</name>
+		<description>Mathematics is the characters skill with numbers and number theory.</description>
+	</skill>
+	<skill>
+		<code>COMP_PROG</code>
+		<name>Computer programming</name>
+		<description>Computer programming is the art of creating applications for computers.</description>
+		<prerequisiteSkill>
+			<code>MATH</code>
+			<value>2</value>
+		</prerequisiteSkill>
+	</skill>
+</skills>

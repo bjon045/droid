@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<races>
+	<race>
+		<code>MUTANT</code>
+		<name>Mutant</name>
+		<description>Terrans who spend too much time out of the lorgs often become exposed to too much radiation which if untreated leads to mutations.</description>
+		<attributeModification>
+			<code>CONSTITUTION</code>
+			<value>1</value>
+		</attributeModification>
+	</race>
+</races>

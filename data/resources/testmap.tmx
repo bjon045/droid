@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="40" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="ground" tilewidth="32" tileheight="32" spacing="1">
+  <image source="ground_tiles_32x32.png" width="197" height="197"/>
+ </tileset>
+ <tileset firstgid="37" name="walls" tilewidth="32" tileheight="32" spacing="1">
+  <image source="walls_32x32.png" width="197" height="197"/>
+ </tileset>
+ <tileset firstgid="73" name="objects 1" tilewidth="32" tileheight="32" spacing="1">
+  <image source="objects_32x32.png" width="197" height="197"/>
+ </tileset>
+ <layer name="ground_layer" width="50" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3WwQrDIBAEUOnBc0uhp57E///GthBhWVajVtc1zMCQw+bgI9HEOTn+29dRn7nHWp5CPesOqXGsKBxw7OJI6V3DrLXDAQcccMABBxztDsuBw1a0HY9Ca+a5rHDE4xrYNc1nO2rPndJZRB2l5xEy81WOm+Boea+Cs+GQnsfq/QHH9Ry/vIW2zHsdI3ofXDjg0HDQnO3Rf/Y2zYx9ru2Yde7u4Iiu7/vBO9px9p/I51YdgTTnSLXuiJUO6rHoSOXr1HCMiMZ5tWs+lQyC80AfAAA=
+  </data>
+ </layer>
+ <layer name="wall_layer" width="50" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+1Y2w6CMAzlZ+Si8RoVY4L//1myB+JS2/WSOQvhJE3YSgdntF1pVeF4RdcDcY83hHeuIwnv3UT69h8vZUADxqdRjmBcFxaLD0AeHmDxgaXy2I7SgfEGSFd9A7vPatcbeDyQNag4n3JCHD8TpjjCfNtqp4EmX0l8EPMJq50GXL6aK4/U+isPm50GXL6aCw9NvvLMY81X8vfxFufQBzHBzmKrnQYaHp6hyVeeoclXnlH6fxA+D/47cXoKmnyVA1Q8tkK9dl3MntqrMzMf76UHHtS9V2ZeskZuHpb6ygOPHPWVBx456isNj7Bv8D89+EAv1FPIUV89mXm4l3AdrR4DF+dxHw7rE0gAe3lwHa0eO0s89q84SGpqmK88AuPB5Suuv4bFpLYfB204PRfzWL+MO88pX07VQ7+I85Q9XEMTS9Szw15g3AehXoLbKPtovBvlntCnQPEocQ5ieTX39/BQJ3r+HpZ69xDNUdeeeUw5+lJ9ciB1TeXGUvVu7n6M9Hm9UL9kvAHxnELLQB8AAA==
+  </data>
+ </layer>
+ <layer name="block_object" width="50" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3WsQkAIAxE0eynje4/jE0gbcBG5D34zU1wEQAAAABQRjab+6tWtps7AAB/8Pe4cQDSZU8/QB8AAA==
+  </data>
+ </layer>
+ <layer name="non_block_objects" width="50" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3WQQqAIBSEYa9Xm9oUQW1q1/0vUEGBiJEuRk3+Dx7U0OKFQ2QMSjScM+ZeAtWhV1CgV1CgV1CgV1CgV1CgV//WWhOSpxLTq8657z/yUtXyHpfGmpA8Fb5XUKBXUJoCnlnkWyAG56E3e7K3f9bnPLZ73OucVk+2J98CtTgA6k6I+EAfAAA=
+  </data>
+ </layer>
+</map>

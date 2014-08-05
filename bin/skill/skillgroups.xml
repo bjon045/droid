@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<skillGroups>
+	<skillGroup>
+		<code>SG_COMBAT</code>
+		<name>Combat</name>
+		<description>TODO</description>
+	</skillGroup>
+	<skillGroup>
+		<code>SG_PILOTING</code>
+		<name>Piloting</name>
+		<description>TODO</description>
+	</skillGroup>
+	<skillGroup>
+		<code>SG_KNOWLEDGE</code>
+		<name>Knowledge</name>
+		<description>TODO</description>
+	</skillGroup>
+	<skillGroup>
+		<code>SG_MECHANICAL</code>
+		<name>Mechanical</name>
+		<description>TODO</description>
+	</skillGroup>
+	<skillGroup>
+		<code>SG_MEDICAL</code>
+		<name>Medical</name>
+		<description>TODO</description>
+	</skillGroup>
+	<skillGroup>
+		<code>SG_PLANETSIDE</code>
+		<name>Planetside</name>
+		<description>TODO</description>
+	</skillGroup>
+</skillGroups>
