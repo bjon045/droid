@@ -2,6 +2,10 @@ package bioroid.control;
 
 import java.util.List;
 
+import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.util.pathfinding.Path;
+import org.newdawn.slick.util.pathfinding.Path.Step;
+
 import bioroid.Constants;
 import bioroid.GameHolder;
 import bioroid.GameMode;
@@ -12,13 +16,11 @@ import bioroid.model.location.Location;
 import bioroid.utils.CharacterUtils;
 import bioroid.utils.MapUtils;
 
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.util.pathfinding.Path;
-import org.newdawn.slick.util.pathfinding.Path.Step;
-
 public class CoreGameController {
 
     private InputController inputController = new InputController();
+
+    private EventController eventController = new EventController();
 
     private int delta;
 
@@ -83,6 +85,9 @@ public class CoreGameController {
 
         // TODO decide if all maps should be updated or not. could be slow
         // depending on the number of maps/AI complexity
+
+        eventController.update(container);
+
     }
 
     private void gotoLocation(GameCharacter person, Location targetLocation, GameMap gameMap) {
