@@ -3,8 +3,6 @@
 	<name>Start test map</name>
 	<description></description>
 	<tmxFile>testmap.tmx</tmxFile>
-	<event>
-	</event>
 	<npc>
 		<name></name>
 		<location>

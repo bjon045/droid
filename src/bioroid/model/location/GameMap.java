@@ -25,8 +25,6 @@ public class GameMap extends ModelObject implements TileBasedMap {
 
     private String tmxFile;
 
-    private List<Event> event;
-
     private List<GameCharacter> npc;
 
     private TiledMap map;
@@ -45,14 +43,6 @@ public class GameMap extends ModelObject implements TileBasedMap {
         } catch (SlickException e) {
             throw new RuntimeException();
         }
-    }
-
-    public List<Event> getEvent() {
-        return event;
-    }
-
-    public void setEvent(List<Event> event) {
-        this.event = event;
     }
 
     public List<GameCharacter> getNpc() {
