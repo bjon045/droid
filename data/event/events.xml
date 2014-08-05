@@ -1,0 +1,16 @@
+<events>
+	<event>
+	   <code>EVENT01</code>
+       <name>EVENT01</name>
+       <description>This is a test message.</description>
+	   <triggerPoint>
+	       <mapCode>MAP_START</mapCode>
+	       <location>
+	            <x>5</x>
+	            <y>30</y>
+	       </location>
+	   </triggerPoint>
+	   <eventType>MESSAGE</eventType>
+	   <repeating>TRUE</repeating>
+	</event>
+</events>
