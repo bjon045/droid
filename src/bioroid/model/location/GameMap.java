@@ -123,6 +123,12 @@ public class GameMap extends ModelObject implements TileBasedMap {
         if (tileId > 0) {
             return true;
         }
+        // check for no floor
+        tileId = map.getTileId(x, y, Constants.MAP_LAYER_FLOOR);
+        if (tileId < 1) {
+            return true;
+        }
+
         // check if another character exists in the location
         List<GameCharacter> pcs = GameHolder.currentGame.getPlayerCharacters();
         for (GameCharacter pc : pcs) {
