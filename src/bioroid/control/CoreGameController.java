@@ -80,12 +80,12 @@ public class CoreGameController {
                     lastMoved = currentLocation;
                 }
             }
+
+            eventController.update();
         }
 
         // TODO decide if all maps should be updated or not. could be slow
         // depending on the number of maps/AI complexity
-
-        eventController.update(container);
 
     }
 
