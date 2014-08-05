@@ -14,7 +14,6 @@ import bioroid.model.character.GameCharacter;
 import bioroid.model.location.GameMap;
 import bioroid.model.location.Location;
 import bioroid.utils.CharacterUtils;
-import bioroid.utils.MapUtils;
 
 public class CoreGameController {
 
@@ -97,7 +96,7 @@ public class CoreGameController {
         // dont move if already next to target
         if ((path != null) && (path.getLength() > 1)) {
             Step step = path.getStep(path.getLength() - 2);
-            if (!MapUtils.isMoveBlocked(gameMap, step.getX(), step.getY(), false)) {
+            if (!gameMap.isMoveBlocked(step.getX(), step.getY(), false)) {
                 followerLocation.setX(step.getX());
                 followerLocation.setY(step.getY());
             }
@@ -140,7 +139,7 @@ public class CoreGameController {
 
         GameHolder.currentAction = null;
 
-        if ((newLocation != null) && !MapUtils.isMoveBlocked(gameMap, newLocation.getX(), newLocation.getY(), true)) {
+        if ((newLocation != null) && !gameMap.isMoveBlocked(newLocation.getX(), newLocation.getY(), true)) {
             // TODO: check if blocked because of another PC if so then switch
             // places
             activeCharacter.setLocation(newLocation);
