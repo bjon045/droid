@@ -1,5 +1,10 @@
 package bioroid;
 
+import bioroid.control.CoreGameController;
+import bioroid.control.EntityManager;
+import bioroid.engine.entity.Entity;
+import bioroid.model.ModelResources;
+
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import org.newdawn.slick.AppGameContainer;
@@ -8,11 +13,6 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
-
-import bioroid.control.CoreGameController;
-import bioroid.control.EntityManager;
-import bioroid.engine.entity.Entity;
-import bioroid.model.ModelResources;
 
 public class BioroidGame implements Game {
 
@@ -32,8 +32,9 @@ public class BioroidGame implements Game {
         // System.setProperty("org.lwjgl.opengl.Window.undecorated", "false");
         BioroidGame bioroidGame = new BioroidGame();
         DisplayMode ddm = Display.getDesktopDisplayMode();
-        AppGameContainer agc = new AppGameContainer(bioroidGame, 800, 600, false);
-        // AppGameContainer agc = new AppGameContainer(bioroidGame, ddm.getWidth(), ddm.getHeight(), true);
+        AppGameContainer agc = new AppGameContainer(bioroidGame, 400, 300, false);
+        // AppGameContainer agc = new AppGameContainer(bioroidGame,
+        // ddm.getWidth(), ddm.getHeight(), true);
         agc.setTargetFrameRate(70);
         agc.start();
     }

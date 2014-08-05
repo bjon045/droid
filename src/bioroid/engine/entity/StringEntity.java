@@ -23,41 +23,41 @@ public class StringEntity extends Entity {
     private List<String> values;
 
     public StringEntity(int x, int y, String value) {
-	super(x, y, 0, 0, 0);
-	values = Arrays.asList(value);
-	setHeight(values.size() * lineHeight);
-	setWidth(value.length() * lineWidth);
+        super(x, y, 0, 0, 0);
+        values = Arrays.asList(value);
+        setHeight(values.size() * lineHeight);
+        setWidth(value.length() * lineWidth);
     }
 
     public StringEntity(int x, int y, int maxWidth, String value) {
-	super(x, y, 0, 0, 0);
-	values = StringUtils.breakUpByWords(value, maxWidth);
-	setHeight(values.size() * lineHeight);
-	setWidth(maxWidth * lineWidth);
+        super(x, y, 0, 0, 0);
+        values = StringUtils.breakUpByWords(value, maxWidth);
+        setHeight(values.size() * lineHeight);
+        setWidth(maxWidth * lineWidth);
     }
 
     public StringEntity(int x, int y, int width, int height, String value) {
-	super(x, y, width, height, 0);
-	values = StringUtils.breakUpByWords(value, 100);
+        super(x, y, width, height, 0);
+        values = StringUtils.breakUpByWords(value, 100);
     }
 
     public void setColour(Color colour) {
-	this.colour = colour;
+        this.colour = colour;
     }
 
     @Override
     public void update(int delta) {
-	// no update required
+        // no update required
     }
 
     @Override
     protected void renderEntitySpecific(GameContainer container, Graphics g) {
 
-	int rowNo = 0;
-	for (String s : values) {
-	    Fonts.BASIC_FONT.drawString(getX(), getY() + (rowNo * lineHeight), s, colour);
-	    rowNo++;
-	}
+        int rowNo = 0;
+        for (String s : values) {
+            Fonts.BASIC_FONT.drawString(getX(), getY() + (rowNo * lineHeight), s, colour);
+            rowNo++;
+        }
     }
 
 }

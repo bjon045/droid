@@ -12,11 +12,11 @@ public class Fonts {
     public static final Color DARK_GREEN = new Color(0, 80, 0);
 
     static {
-	try {
-	    BASIC_FONT = new AngelCodeFont("font/space.fnt", "font/space_00.png");
+        try {
+            BASIC_FONT = new AngelCodeFont("font/space.fnt", "font/space_00.png");
 
-	} catch (SlickException e) {
-	    throw new RuntimeException(e);
-	}
+        } catch (SlickException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

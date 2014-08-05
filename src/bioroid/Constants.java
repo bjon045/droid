@@ -17,7 +17,8 @@ public class Constants {
     // width of the popup help text in characters
     public static final int POPUP_CHARACTER_WIDTH = 44;
 
-    // how often actions can be performed in milliseconds. This is set so enemies don't move too fast.
+    // how often actions can be performed in milliseconds. This is set so
+    // enemies don't move too fast.
     public static final int ACTION_DELAY = 100;
 
     public static final int PARTY_SIZE = 6;

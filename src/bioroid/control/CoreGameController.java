@@ -2,10 +2,6 @@ package bioroid.control;
 
 import java.util.List;
 
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.util.pathfinding.Path;
-import org.newdawn.slick.util.pathfinding.Path.Step;
-
 import bioroid.Constants;
 import bioroid.GameHolder;
 import bioroid.GameMode;
@@ -15,6 +11,10 @@ import bioroid.model.location.GameMap;
 import bioroid.model.location.Location;
 import bioroid.utils.CharacterUtils;
 import bioroid.utils.MapUtils;
+
+import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.util.pathfinding.Path;
+import org.newdawn.slick.util.pathfinding.Path.Step;
 
 public class CoreGameController {
 
@@ -46,11 +46,14 @@ public class CoreGameController {
 
         if (GameHolder.combatMode) {
             // combat mode
-            // in this mode only the current actor can move. if this is player controlled check for keyboard event
-            // if not player character then we need to check who's turn it is and determine their move
+            // in this mode only the current actor can move. if this is player
+            // controlled check for keyboard event
+            // if not player character then we need to check who's turn it is
+            // and determine their move
             // a pause of 1 second (1000 delta) should be held between turns.
         } else {
-            // if not in combat mode then only the active character (character 0) moves
+            // if not in combat mode then only the active character (character
+            // 0) moves
             // after a successful move then all remaining actors are updated
 
             GameCharacter activeCharacter = CharacterUtils.getMainCharacter();
@@ -62,10 +65,12 @@ public class CoreGameController {
                 return;
             }
 
-            // update map view as we are not in combat and the main character has moved.
+            // update map view as we are not in combat and the main character
+            // has moved.
             GameHolder.viewPoint = activeCharacter.getLocation().copy();
 
-            // update the rest of the party. This is most likely to just make them follow the main character.
+            // update the rest of the party. This is most likely to just make
+            // them follow the main character.
             List<GameCharacter> pcs = GameHolder.currentGame.getPlayerCharacters();
             for (GameCharacter pc : pcs) {
                 if (pc != activeCharacter) {
@@ -76,7 +81,8 @@ public class CoreGameController {
             }
         }
 
-        // TODO decide if all maps should be updated or not. could be slow depending on the number of maps/AI complexity
+        // TODO decide if all maps should be updated or not. could be slow
+        // depending on the number of maps/AI complexity
     }
 
     private void gotoLocation(GameCharacter person, Location targetLocation, GameMap gameMap) {
@@ -130,7 +136,8 @@ public class CoreGameController {
         GameHolder.currentAction = null;
 
         if ((newLocation != null) && !MapUtils.isMoveBlocked(gameMap, newLocation.getX(), newLocation.getY(), true)) {
-            // TODO: check if blocked because of another PC if so then switch places
+            // TODO: check if blocked because of another PC if so then switch
+            // places
             activeCharacter.setLocation(newLocation);
             System.out.println("Moved to location x:" + newLocation.getX() + " y:" + newLocation.getY());
             return true;

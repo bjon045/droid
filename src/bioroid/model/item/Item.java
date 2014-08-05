@@ -7,11 +7,11 @@ public abstract class Item extends ModelObject {
     private int weight;
 
     public int getWeight() {
-	return weight;
+        return weight;
     }
 
     public void setWeight(int weight) {
-	this.weight = weight;
+        this.weight = weight;
     }
 
 }

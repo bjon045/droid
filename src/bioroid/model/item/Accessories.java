@@ -12,10 +12,10 @@ public class Accessories {
 
     @XmlElement(name = "accessory")
     public List<Accessory> getAccessories() {
-	return accessories;
+        return accessories;
     }
 
     public void setAccessories(List<Accessory> accessories) {
-	this.accessories = accessories;
+        this.accessories = accessories;
     }
 }

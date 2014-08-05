@@ -23,27 +23,27 @@ public class SavedGame {
 
     @XmlElement(name = "playerCharacter")
     public List<GameCharacter> getPlayerCharacters() {
-	return playerCharacters;
+        return playerCharacters;
     }
 
     public void setPlayerCharacters(List<GameCharacter> playerCharacter) {
-	playerCharacters = playerCharacter;
+        playerCharacters = playerCharacter;
     }
 
     public String getCurrentMapCode() {
-	return currentMapCode;
+        return currentMapCode;
     }
 
     public void setCurrentMapCode(String currentMapCode) {
-	this.currentMapCode = currentMapCode;
+        this.currentMapCode = currentMapCode;
     }
 
     public int getActiveCharacter() {
-	return activeCharacter;
+        return activeCharacter;
     }
 
     public void setActiveCharacter(int activeCharacter) {
-	this.activeCharacter = activeCharacter;
+        this.activeCharacter = activeCharacter;
     }
 
 }

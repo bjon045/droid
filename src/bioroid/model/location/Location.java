@@ -12,59 +12,59 @@ public class Location {
     }
 
     public Location(int x, int y) {
-	this.x = x;
-	this.y = y;
+        this.x = x;
+        this.y = y;
     }
 
     public int getX() {
-	return x;
+        return x;
     }
 
     public void setX(int x) {
-	this.x = x;
+        this.x = x;
     }
 
     public int getY() {
-	return y;
+        return y;
     }
 
     public void setY(int y) {
-	this.y = y;
+        this.y = y;
     }
 
     public void incrementX() {
-	x++;
+        x++;
     }
 
     public void decrementX() {
-	x--;
+        x--;
     }
 
     public void incrementY() {
-	y++;
+        y++;
     }
 
     public void derementY() {
-	y--;
+        y--;
     }
 
     public Location copy() {
-	Location newLocation = new Location();
-	newLocation.setX(x);
-	newLocation.setY(y);
-	return newLocation;
+        Location newLocation = new Location();
+        newLocation.setX(x);
+        newLocation.setY(y);
+        return newLocation;
     }
 
     @Override
     public boolean equals(Object o) {
-	if ((o == null) || !(o instanceof Location)) {
-	    return false;
-	}
-	Location l = (Location) o;
-	if ((l.x == x) && (l.y == y)) {
-	    return true;
-	}
-	return false;
+        if ((o == null) || !(o instanceof Location)) {
+            return false;
+        }
+        Location l = (Location) o;
+        if ((l.x == x) && (l.y == y)) {
+            return true;
+        }
+        return false;
     }
 
 }

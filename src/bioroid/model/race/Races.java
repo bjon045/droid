@@ -12,11 +12,11 @@ public class Races {
 
     @XmlElement(name = "race")
     public List<Race> getRaces() {
-	return races;
+        return races;
     }
 
     public void setRaces(List<Race> races) {
-	this.races = races;
+        this.races = races;
     }
 
 }

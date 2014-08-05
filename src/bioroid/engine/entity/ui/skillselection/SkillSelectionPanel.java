@@ -32,36 +32,37 @@ public class SkillSelectionPanel extends Entity {
     private List<Entity> entities = new ArrayList<Entity>();
 
     public SkillSelectionPanel(int x, int y, int width, int height) {
-	super(x, y, width, height, 0);
+        super(x, y, width, height, 0);
     }
 
     /**
      * Call this method when underlying party structure is changed
      */
     public void reset() {
-	// refresh list of entities
-	entities.clear();
-	GameCharacter pc = CharacterGenerationHolder.activeCharacter;
-	int counter1 = 0;
+        // refresh list of entities
+        entities.clear();
+        GameCharacter pc = CharacterGenerationHolder.activeCharacter;
+        int counter1 = 0;
 
-	// Skill groups
-	List<SkillGroup> skillGroups = ModelResources.skillGroups.getSkillGroups();
-	for (SkillGroup skillGroup : skillGroups) {
-	    StringEntity skillGroupLabel = new StringEntity(getX() + FIRST_LEFT_OFFSET + (counter1 * 150), getY() + 10, skillGroup.getName());
-	    skillGroupLabel.setListener(new SkillGroupSelectionListener(skillGroup.getCode()));
+        // Skill groups
+        List<SkillGroup> skillGroups = ModelResources.skillGroups.getSkillGroups();
+        for (SkillGroup skillGroup : skillGroups) {
+            StringEntity skillGroupLabel = new StringEntity(getX() + FIRST_LEFT_OFFSET + (counter1 * 150), getY() + 10,
+                    skillGroup.getName());
+            skillGroupLabel.setListener(new SkillGroupSelectionListener(skillGroup.getCode()));
 
-	    if (StringUtils.equals(CharacterGenerationHolder.selectedSkillGroup, skillGroup.getCode())) {
-		skillGroupLabel.setDrawBorder(true);
-	    }
+            if (StringUtils.equals(CharacterGenerationHolder.selectedSkillGroup, skillGroup.getCode())) {
+                skillGroupLabel.setDrawBorder(true);
+            }
 
-	    entities.add(skillGroupLabel);
-	    counter1++;
-	}
+            entities.add(skillGroupLabel);
+            counter1++;
+        }
 
-	// skills
-	if (StringUtils.isNotBlank(CharacterGenerationHolder.selectedSkillGroup)) {
+        // skills
+        if (StringUtils.isNotBlank(CharacterGenerationHolder.selectedSkillGroup)) {
 
-	}
+        }
 
     }
 
@@ -72,7 +73,7 @@ public class SkillSelectionPanel extends Entity {
 
     @Override
     public List<Entity> getChildren() {
-	return entities;
+        return entities;
     }
 
 }

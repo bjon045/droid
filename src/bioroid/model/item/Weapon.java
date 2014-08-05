@@ -15,59 +15,59 @@ public class Weapon extends Item {
     private WeaponType weaponType;
 
     public int getShots() {
-	return shots;
+        return shots;
     }
 
     public void setShots(int shots) {
-	this.shots = shots;
+        this.shots = shots;
     }
 
     public int getDamageDice() {
-	return damageDice;
+        return damageDice;
     }
 
     public void setDamageDice(int damageDice) {
-	this.damageDice = damageDice;
+        this.damageDice = damageDice;
     }
 
     public int getDamageModifier() {
-	return damageModifier;
+        return damageModifier;
     }
 
     public void setDamageModifier(int damageModifier) {
-	this.damageModifier = damageModifier;
+        this.damageModifier = damageModifier;
     }
 
     public int getRange() {
-	return range;
+        return range;
     }
 
     public void setRange(int range) {
-	this.range = range;
+        this.range = range;
     }
 
     public int getAmmo() {
-	return ammo;
+        return ammo;
     }
 
     public void setAmmo(int ammo) {
-	this.ammo = ammo;
+        this.ammo = ammo;
     }
 
     public WeaponType getWeaponType() {
-	return weaponType;
+        return weaponType;
     }
 
     public void setWeaponType(WeaponType weaponType) {
-	this.weaponType = weaponType;
+        this.weaponType = weaponType;
     }
 
     @Override
     public boolean validate() {
-	if (weaponType == null) {
-	    return false;
-	}
-	return super.validate();
+        if (weaponType == null) {
+            return false;
+        }
+        return super.validate();
     }
 
 }

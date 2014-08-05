@@ -7,27 +7,27 @@ public class Armour extends Item {
     private ArmourType armourType;
 
     public int getAcAdjustment() {
-	return acAdjustment;
+        return acAdjustment;
     }
 
     public void setAcAdjustment(int acAdjustment) {
-	this.acAdjustment = acAdjustment;
+        this.acAdjustment = acAdjustment;
     }
 
     public ArmourType getArmourType() {
-	return armourType;
+        return armourType;
     }
 
     public void setArmourType(ArmourType armourType) {
-	this.armourType = armourType;
+        this.armourType = armourType;
     }
 
     @Override
     public boolean validate() {
-	if (armourType == null) {
-	    return false;
-	}
-	return super.validate();
+        if (armourType == null) {
+            return false;
+        }
+        return super.validate();
     }
 
 }

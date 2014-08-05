@@ -12,11 +12,11 @@ public class Attributes {
 
     @XmlElement(name = "attribute")
     public List<Attribute> getAttributes() {
-	return attributes;
+        return attributes;
     }
 
     public void setAttributes(List<Attribute> attributes) {
-	this.attributes = attributes;
+        this.attributes = attributes;
     }
 
 }

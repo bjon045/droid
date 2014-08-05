@@ -21,7 +21,8 @@ public class MapUtils {
         for (GameCharacter pc : pcs) {
             Location pcLoc = pc.getLocation();
             if ((pcLoc.getX() == x) && (pcLoc.getY() == y)) {
-                // switch places with the moved character and return that the path was not blocked
+                // switch places with the moved character and return that the
+                // path was not blocked
                 if (playerControl) {
                     return false;
                 }

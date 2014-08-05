@@ -11,16 +11,16 @@ public class CareerSelectionListener extends PopupListener {
     private Career career;
 
     public CareerSelectionListener(String popupText, Career career) {
-	super(popupText);
-	this.career = career;
+        super(popupText);
+        this.career = career;
     }
 
     @Override
     public void mousePressed(Entity e, int mouseX, int mouseY) {
-	if (career.canTakeCareer(CharacterGenerationHolder.activeCharacter)) {
-	    CharacterGenerationHolder.activeCharacter.setCareer(career.getCode());
-	    EntityManager.getRaceSelectionPanel().reset();
-	}
+        if (career.canTakeCareer(CharacterGenerationHolder.activeCharacter)) {
+            CharacterGenerationHolder.activeCharacter.setCareer(career.getCode());
+            EntityManager.getRaceSelectionPanel().reset();
+        }
     }
 
 }

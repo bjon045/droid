@@ -12,10 +12,10 @@ public class SkillGroups {
 
     @XmlElement(name = "skillGroup")
     public List<SkillGroup> getSkillGroups() {
-	return skillGroups;
+        return skillGroups;
     }
 
     public void setSkillGroups(List<SkillGroup> skillGroups) {
-	this.skillGroups = skillGroups;
+        this.skillGroups = skillGroups;
     }
 }

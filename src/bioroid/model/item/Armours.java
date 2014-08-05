@@ -12,11 +12,11 @@ public class Armours {
 
     @XmlElement(name = "armour")
     public List<Armour> getArmours() {
-	return armours;
+        return armours;
     }
 
     public void setArmours(List<Armour> armours) {
-	this.armours = armours;
+        this.armours = armours;
     }
 
 }

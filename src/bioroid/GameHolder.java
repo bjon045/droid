@@ -29,15 +29,15 @@ public class GameHolder {
 
     public static class CharacterGenerationHolder {
 
-	public static int attributePoints;
+        public static int attributePoints;
 
-	public static GameCharacter activeCharacter;
+        public static GameCharacter activeCharacter;
 
-	public static List<CodeAndValue> spentPoints;
+        public static List<CodeAndValue> spentPoints;
 
-	public static List<CodeAndValue> maximumPoints;
+        public static List<CodeAndValue> maximumPoints;
 
-	public static String selectedSkillGroup;
+        public static String selectedSkillGroup;
 
     }
 

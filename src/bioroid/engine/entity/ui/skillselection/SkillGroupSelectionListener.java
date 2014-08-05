@@ -10,23 +10,23 @@ public class SkillGroupSelectionListener implements EntityListener {
     private String skillGroupCode;
 
     public SkillGroupSelectionListener(String skillGroupCode) {
-	this.skillGroupCode = skillGroupCode;
+        this.skillGroupCode = skillGroupCode;
     }
 
     @Override
     public void mouseEntered(Entity e) {
-	//
+        //
     }
 
     @Override
     public void mouseExited(Entity e) {
-	//
+        //
     }
 
     @Override
     public void mousePressed(Entity e, int mouseX, int mouseY) {
-	CharacterGenerationHolder.selectedSkillGroup = skillGroupCode;
-	EntityManager.getSkillSelectionPanel().reset();
+        CharacterGenerationHolder.selectedSkillGroup = skillGroupCode;
+        EntityManager.getSkillSelectionPanel().reset();
     }
 
 }

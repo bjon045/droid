@@ -12,10 +12,10 @@ public class PartySlotPanel extends Entity {
     private List<Entity> entities = new ArrayList<Entity>();
 
     public PartySlotPanel(int x, int y, int width, int height, GameCharacter pc) {
-	super(x, y, width, height, 0);
+        super(x, y, width, height, 0);
 
-	StringEntity name = new StringEntity(x, y, 300, 20, pc.getName());
-	entities.add(name);
+        StringEntity name = new StringEntity(x, y, 300, 20, pc.getName());
+        entities.add(name);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class PartySlotPanel extends Entity {
 
     @Override
     public List<Entity> getChildren() {
-	return entities;
+        return entities;
     }
 
 }

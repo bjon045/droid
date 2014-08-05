@@ -11,34 +11,34 @@ public abstract class ModelObject {
     private String description;
 
     public String getCode() {
-	return code;
+        return code;
     }
 
     public void setCode(String code) {
-	this.code = code;
+        this.code = code;
     }
 
     public String getName() {
-	return name;
+        return name;
     }
 
     public void setName(String name) {
-	this.name = name;
+        this.name = name;
     }
 
     public String getDescription() {
-	return description;
+        return description;
     }
 
     public void setDescription(String description) {
-	this.description = description;
+        this.description = description;
     }
 
     public boolean validate() {
-	if (StringUtils.isBlank(code) || StringUtils.isBlank(name)) {
-	    return false;
-	}
-	return true;
+        if (StringUtils.isBlank(code) || StringUtils.isBlank(name)) {
+            return false;
+        }
+        return true;
     }
 
 }

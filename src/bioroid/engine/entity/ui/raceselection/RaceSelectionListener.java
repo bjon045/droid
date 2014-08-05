@@ -12,17 +12,17 @@ public class RaceSelectionListener extends PopupListener {
     private Race race;
 
     public RaceSelectionListener(String popupText, Race race) {
-	super(popupText);
-	this.race = race;
+        super(popupText);
+        this.race = race;
     }
 
     @Override
     public void mousePressed(Entity e, int mouseX, int mouseY) {
-	CharacterGenerationHolder.activeCharacter.setRace(race.getCode());
-	CharacterGenerationHolder.activeCharacter.setSubrace(null);
-	CharacterGenerationHolder.activeCharacter.setCareer(null);
-	CharacterUtils.resetAttributes(CharacterGenerationHolder.activeCharacter);
-	EntityManager.getRaceSelectionPanel().reset();
+        CharacterGenerationHolder.activeCharacter.setRace(race.getCode());
+        CharacterGenerationHolder.activeCharacter.setSubrace(null);
+        CharacterGenerationHolder.activeCharacter.setCareer(null);
+        CharacterUtils.resetAttributes(CharacterGenerationHolder.activeCharacter);
+        EntityManager.getRaceSelectionPanel().reset();
     }
 
 }

@@ -2,13 +2,12 @@ package bioroid.model.character;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.annotation.XmlElement;
-
-import org.newdawn.slick.util.pathfinding.Mover;
 
 import bioroid.model.CodeAndValue;
 import bioroid.model.location.Location;
+
+import org.newdawn.slick.util.pathfinding.Mover;
 
 public class GameCharacter implements Mover {
 
@@ -33,85 +32,85 @@ public class GameCharacter implements Mover {
     private String spriteName;
 
     public String getName() {
-	return name;
+        return name;
     }
 
     public void setName(String name) {
-	this.name = name;
+        this.name = name;
     }
 
     public String getRace() {
-	return race;
+        return race;
     }
 
     public void setRace(String race) {
-	this.race = race;
+        this.race = race;
     }
 
     public String getSubrace() {
-	return subrace;
+        return subrace;
     }
 
     public void setSubrace(String subrace) {
-	this.subrace = subrace;
+        this.subrace = subrace;
     }
 
     public String getCareer() {
-	return career;
+        return career;
     }
 
     public void setCareer(String currentCareer) {
-	career = currentCareer;
+        career = currentCareer;
     }
 
     public int getCurrentHP() {
-	return currentHP;
+        return currentHP;
     }
 
     public void setCurrentHP(int currentHP) {
-	this.currentHP = currentHP;
+        this.currentHP = currentHP;
     }
 
     public int getMaxHP() {
-	return maxHP;
+        return maxHP;
     }
 
     public void setMaxHP(int maxHP) {
-	this.maxHP = maxHP;
+        this.maxHP = maxHP;
     }
 
     @XmlElement(name = "attribute")
     public List<CodeAndValue> getAttributes() {
-	return attributes;
+        return attributes;
     }
 
     public void setAttributes(List<CodeAndValue> attributes) {
-	this.attributes = attributes;
+        this.attributes = attributes;
     }
 
     @XmlElement(name = "skill")
     public List<CodeAndValue> getSkills() {
-	return skills;
+        return skills;
     }
 
     public void setSkills(List<CodeAndValue> skills) {
-	this.skills = skills;
+        this.skills = skills;
     }
 
     public Location getLocation() {
-	return location;
+        return location;
     }
 
     public void setLocation(Location location) {
-	this.location = location;
+        this.location = location;
     }
 
     public String getSpriteName() {
-	return spriteName;
+        return spriteName;
     }
 
     public void setSpriteName(String spriteName) {
-	this.spriteName = spriteName;
+        this.spriteName = spriteName;
     }
 
 }

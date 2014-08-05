@@ -7,19 +7,19 @@ public class CodeAndValue {
     private int value;
 
     public String getCode() {
-	return code;
+        return code;
     }
 
     public void setCode(String code) {
-	this.code = code;
+        this.code = code;
     }
 
     public int getValue() {
-	return value;
+        return value;
     }
 
     public void setValue(int value) {
-	this.value = value;
+        this.value = value;
     }
 
 }

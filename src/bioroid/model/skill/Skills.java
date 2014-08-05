@@ -12,10 +12,10 @@ public class Skills {
 
     @XmlElement(name = "skill")
     public List<Skill> getSkills() {
-	return skills;
+        return skills;
     }
 
     public void setSkills(List<Skill> skills) {
-	this.skills = skills;
+        this.skills = skills;
     }
 }
