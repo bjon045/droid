@@ -14,7 +14,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 package bioroid.model.event;
 
+import bioroid.GameHolder;
 import bioroid.model.location.Location;
+import bioroid.utils.StringUtils;
 
 public class TriggerPoint {
 
@@ -40,6 +42,6 @@ public class TriggerPoint {
     }
 
     public boolean isTriggered(Location location) {
-        return location.equals(this.location);
+        return StringUtils.equals(GameHolder.currentMap.getCode(), mapCode) && this.location.equals(location);
     }
 }

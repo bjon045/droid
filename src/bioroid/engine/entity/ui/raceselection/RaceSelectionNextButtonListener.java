@@ -23,7 +23,7 @@ public class RaceSelectionNextButtonListener implements EntityListener {
         GameHolder.gameMode = GameMode.SKILL_SELECTION;
         EntityManager.getSkillSelectionPanel().reset();
         // CharacterUtils.resetAttributes(CharacterGenerationHolder.activeCharacter);
-        // TODO reset character skills
+        // TODO: requirement: reset character skills
     }
 
 }

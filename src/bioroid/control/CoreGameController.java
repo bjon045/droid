@@ -84,7 +84,7 @@ public class CoreGameController {
             eventController.update();
         }
 
-        // TODO decide if all maps should be updated or not. could be slow
+        // TODO optimisation/design: decide if all maps should be updated or not. could be slow
         // depending on the number of maps/AI complexity
 
     }

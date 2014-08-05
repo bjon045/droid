@@ -3,6 +3,9 @@ package bioroid.control;
 import java.util.Arrays;
 import java.util.List;
 
+import org.lwjgl.opengl.Display;
+import org.newdawn.slick.Color;
+
 import bioroid.Constants;
 import bioroid.GameMode;
 import bioroid.engine.entity.Entity;
@@ -14,9 +17,6 @@ import bioroid.engine.entity.ui.partygeneration.PartyGenerationPanel;
 import bioroid.engine.entity.ui.raceselection.RaceSelectionPanel;
 import bioroid.engine.entity.ui.skillselection.SkillSelectionPanel;
 import bioroid.model.location.Location;
-
-import org.lwjgl.opengl.Display;
-import org.newdawn.slick.Color;
 
 public final class EntityManager {
 
@@ -48,6 +48,14 @@ public final class EntityManager {
             return Arrays.asList(getBackgroundPanel(), getRaceSelectionPanel(), getPopupPanel());
         case SKILL_SELECTION:
             return Arrays.asList(getBackgroundPanel(), getSkillSelectionPanel(), getPopupPanel());
+        case INVENTORY_SCREEN:
+            // TODO: requirement
+            break;
+        case SKILL_SCREEN:
+            // TODO: requirement
+            break;
+        default:
+            break;
         }
         return null;
     }
