@@ -26,7 +26,7 @@ public class EventController {
         // TODO optimisation: events should be preloaded onto the map
 
         for (Event event : events) {
-            if (!event.getRepeating()) {
+            if (!event.isRepeating()) {
                 // if an event is not repeating it needs to be checked if it has already triggered
                 // TODO requirement: check game state and get event status/progression
                 continue;

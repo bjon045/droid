@@ -13,7 +13,7 @@ public class Event extends ModelObject {
 
     private EventType eventType;
 
-    private Boolean repeating;
+    private boolean repeating;
 
     // TODO: must have prereqiuisites i.e. prior event or state. State of events will be stored
     // with game state information
@@ -35,11 +35,11 @@ public class Event extends ModelObject {
         this.eventType = eventType;
     }
 
-    public Boolean getRepeating() {
+    public boolean isRepeating() {
         return repeating;
     }
 
-    public void setRepeating(Boolean repeating) {
+    public void setRepeating(boolean repeating) {
         this.repeating = repeating;
     }
 
