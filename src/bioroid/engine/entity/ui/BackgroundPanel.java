@@ -1,20 +1,20 @@
 package bioroid.engine.entity.ui;
 
-import static bioroid.Constants.RESOURCE_FOLDER;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Image;
-import org.newdawn.slick.SlickException;
 
 import bioroid.Constants;
 import bioroid.GameHolder;
 import bioroid.GameMode;
 import bioroid.engine.entity.Entity;
 import bioroid.model.location.Location;
+
+import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
+import org.newdawn.slick.SlickException;
+
+import static bioroid.Constants.RESOURCE_FOLDER;
 
 public class BackgroundPanel extends Entity {
 
@@ -108,8 +108,8 @@ public class BackgroundPanel extends Entity {
     }
 
     /**
-     * Get the topleft pixel location of the main window that is usable i.e. topLeft pixel after the border ends. Used
-     * for map, char screen etc
+     * Get the topleft pixel location of the main window that is usable i.e. topLeft pixel after the border ends. Used for map, char
+     * screen etc
      * 
      * @return
      */
