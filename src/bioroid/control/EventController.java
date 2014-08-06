@@ -6,6 +6,7 @@ import bioroid.GameHolder;
 import bioroid.model.ModelResources;
 import bioroid.model.character.GameCharacter;
 import bioroid.model.event.Event;
+import bioroid.model.event.EventType;
 import bioroid.model.event.TriggerPoint;
 import bioroid.model.location.GameMap;
 import bioroid.utils.CharacterUtils;
@@ -33,10 +34,17 @@ public class EventController {
             for (TriggerPoint tp : event.getTriggerPoints()) {
 
                 if (tp.isTriggered(mainCharacter.getLocation())) {
-                    // TODO: requirement: implement event actions
-                    System.out.println("Event Triggered: " + event.getCode());
+                    handleEvent(event);
                 }
             }
+        }
+    }
+
+    private void handleEvent(Event event) {
+        // TODO: requirement: implement event actions
+        System.out.println("Event Triggered: " + event.getCode());
+        if (event.getEventType() == EventType.MESSAGE) {
+            EntityManager.getPopupPanel();
         }
     }
 
