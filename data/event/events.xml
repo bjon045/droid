@@ -11,6 +11,6 @@
 	       </location>
 	   </triggerPoint>
 	   <eventType>MESSAGE</eventType>
-	   <repeating>TRUE</repeating>
+	   <repeating>true</repeating>
 	</event>
 </events>
