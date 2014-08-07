@@ -175,7 +175,7 @@ public class MapPanel extends Entity {
             y = y + mapPanel.mapStartY;
 
             System.out.println("Clicked on location x:" + x + " y:" + y);
-            if (!gameMap.isMoveBlocked(x, y, true)) {
+            if (!gameMap.isMoveBlocked(x, y)) {
                 GameHolder.currentAction = new Action(ActionType.MOVE, new Location(x, y));
             }
 

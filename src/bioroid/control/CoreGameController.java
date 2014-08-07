@@ -58,10 +58,9 @@ public class CoreGameController {
             // after a successful move then all remaining actors are updated
 
             GameCharacter activeCharacter = CharacterUtils.getMainCharacter();
-            Location lastMoved = activeCharacter.getLocation();
 
             boolean moved = moveActiveCharacter(container, gameMap, activeCharacter);
-
+            Location lastMoved = activeCharacter.getLocation().copy();
             if (!moved) {
                 return;
             }
@@ -76,8 +75,8 @@ public class CoreGameController {
             for (GameCharacter pc : pcs) {
                 if (pc != activeCharacter) {
                     Location currentLocation = pc.getLocation();
-                    gotoLocation(pc, lastMoved, gameMap);
-                    lastMoved = currentLocation;
+                    gotoLocation(pc, lastMoved, gameMap, false);
+                    lastMoved.updateWith(currentLocation);
                 }
             }
 
@@ -89,16 +88,23 @@ public class CoreGameController {
 
     }
 
-    private void gotoLocation(GameCharacter person, Location targetLocation, GameMap gameMap) {
+    private void gotoLocation(GameCharacter person, Location targetLocation, GameMap gameMap, boolean isActiveCharacter) {
         Location followerLocation = person.getLocation();
         Path path = gameMap.getPathFinder().findPath(person, targetLocation.getX(), targetLocation.getY(),
                 followerLocation.getX(), followerLocation.getY());
         // dont move if already next to target
-        if ((path != null) && (path.getLength() > 1)) {
+        if ((path != null) && (path.getLength() > 2) || isActiveCharacter) {
             Step step = path.getStep(path.getLength() - 2);
-            if (!gameMap.isMoveBlocked(step.getX(), step.getY(), false)) {
-                followerLocation.setX(step.getX());
-                followerLocation.setY(step.getY());
+            if (!gameMap.isMoveBlocked(step.getX(), step.getY())) {
+                Location newLocation = new Location(step.getX(), step.getY());
+                GameCharacter occupiedLocationPC = findPCAtLocation(person, newLocation);
+                if (occupiedLocationPC == CharacterUtils.getMainCharacter()) {
+                    return;
+                } else if (occupiedLocationPC != null) {
+                    occupiedLocationPC.getLocation().updateWith(person.getLocation());
+                }
+
+                followerLocation.updateWith(newLocation);
             }
         }
     }
@@ -126,23 +132,47 @@ public class CoreGameController {
             newLocation.incrementY();
             break;
         case MOVE:
-            gotoLocation(activeCharacter, action.getLocation(), gameMap);
+            gotoLocation(activeCharacter, action.getLocation(), gameMap, true);
             if (activeCharacter.getLocation().equals(action.getLocation())) {
+                // if reached the target location then clear action
                 GameHolder.currentAction = null;
             }
             return true;
+        default:
+            // not a move action so return
+            return false;
         }
 
         GameHolder.currentAction = null;
 
-        if ((newLocation != null) && !gameMap.isMoveBlocked(newLocation.getX(), newLocation.getY(), true)) {
-            // TODO: check if blocked because of another PC if so then switch
-            // places
+        // begin move
+
+        if (!gameMap.isMoveBlocked(newLocation.getX(), newLocation.getY())) {
+            // target space is not blocked so we can move
+
+            GameCharacter occupiedLocationPC = findPCAtLocation(activeCharacter, newLocation);
+            if (occupiedLocationPC != null) {
+                occupiedLocationPC.getLocation().updateWith(activeCharacter.getLocation());
+            }
             activeCharacter.setLocation(newLocation);
             System.out.println("Moved to location x:" + newLocation.getX() + " y:" + newLocation.getY());
             return true;
         }
         return false;
+    }
+
+    private GameCharacter findPCAtLocation(GameCharacter activeCharacter, Location newLocation) {
+        // check if another character exists in the location
+        List<GameCharacter> pcs = GameHolder.currentGame.getPlayerCharacters();
+        for (GameCharacter pc : pcs) {
+            if (pc != activeCharacter) {
+                Location pcLoc = pc.getLocation();
+                if (newLocation.equals(pcLoc)) {
+                    return pc;
+                }
+            }
+        }
+        return null;
     }
 
 }
