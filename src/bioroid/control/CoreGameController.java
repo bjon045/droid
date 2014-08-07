@@ -82,8 +82,13 @@ public class CoreGameController {
                         continue;
                     }
 
-                    GameCharacter occupiedLocationPC = findPCAtLocation(pc, desiredLocation);
                     if (currentLocation.isNextTo(lastMoved.getLocation())) {
+                        lastMoved = pc;
+                        continue;
+                    }
+
+                    GameCharacter occupiedLocationPC = findPCAtLocation(pc, desiredLocation);
+                    if (occupiedLocationPC == activeCharacter) {
                         lastMoved = pc;
                         continue;
                     }
