@@ -60,7 +60,6 @@ public class CoreGameController {
             GameCharacter activeCharacter = CharacterUtils.getMainCharacter();
 
             boolean moved = moveActiveCharacter(container, gameMap, activeCharacter);
-            Location lastMoved = activeCharacter.getLocation().copy();
             if (!moved) {
                 return;
             }
@@ -72,11 +71,28 @@ public class CoreGameController {
             // update the rest of the party. This is most likely to just make
             // them follow the main character.
             List<GameCharacter> pcs = GameHolder.currentGame.getPlayerCharacters();
+            GameCharacter lastMoved = activeCharacter;
             for (GameCharacter pc : pcs) {
                 if (pc != activeCharacter) {
                     Location currentLocation = pc.getLocation();
-                    gotoLocation(pc, lastMoved, gameMap, false);
-                    lastMoved.updateWith(currentLocation);
+                    Location desiredLocation = findNextStepLocation(pc, lastMoved.getLocation(), gameMap);
+
+                    if (desiredLocation == null) {
+                        lastMoved = pc;
+                        continue;
+                    }
+
+                    GameCharacter occupiedLocationPC = findPCAtLocation(pc, desiredLocation);
+                    if (currentLocation.isNextTo(lastMoved.getLocation())) {
+                        lastMoved = pc;
+                        continue;
+                    }
+                    if (occupiedLocationPC != null) {
+                        occupiedLocationPC.getLocation().updateWith(pc.getLocation());
+                    }
+
+                    pc.getLocation().updateWith(desiredLocation);
+                    lastMoved = pc;
                 }
             }
 
@@ -88,65 +104,60 @@ public class CoreGameController {
 
     }
 
-    private void gotoLocation(GameCharacter person, Location targetLocation, GameMap gameMap, boolean isActiveCharacter) {
+    private Location findNextStepLocation(GameCharacter person, Location targetLocation, GameMap gameMap) {
         Location followerLocation = person.getLocation();
         Path path = gameMap.getPathFinder().findPath(person, targetLocation.getX(), targetLocation.getY(),
                 followerLocation.getX(), followerLocation.getY());
-        // dont move if already next to target
-        if ((path != null) && (path.getLength() > 2) || isActiveCharacter) {
+        if ((path != null) && (path.getLength() > 1)) {
             Step step = path.getStep(path.getLength() - 2);
-            if (!gameMap.isMoveBlocked(step.getX(), step.getY())) {
-                Location newLocation = new Location(step.getX(), step.getY());
-                GameCharacter occupiedLocationPC = findPCAtLocation(person, newLocation);
-                if (occupiedLocationPC == CharacterUtils.getMainCharacter()) {
-                    return;
-                } else if (occupiedLocationPC != null) {
-                    occupiedLocationPC.getLocation().updateWith(person.getLocation());
-                }
-
-                followerLocation.updateWith(newLocation);
-            }
+            return new Location(step.getX(), step.getY());
         }
+        return null;
     }
 
     private boolean moveActiveCharacter(GameContainer container, GameMap gameMap, GameCharacter activeCharacter) {
 
         Action action = GameHolder.currentAction;
 
-        Location currentLocation = activeCharacter.getLocation();
-        Location newLocation = currentLocation.copy();
+        Location newLocation;
 
         switch (action.getActionType()) {
         case PASS:
-            break;
+            GameHolder.currentAction = null;
+            return true;
         case MOVE_WEST:
+            newLocation = activeCharacter.getLocation().copy();
             newLocation.decrementX();
+            GameHolder.currentAction = null;
             break;
         case MOVE_EAST:
+            newLocation = activeCharacter.getLocation().copy();
             newLocation.incrementX();
+            GameHolder.currentAction = null;
             break;
         case MOVE_NORTH:
+            newLocation = activeCharacter.getLocation().copy();
             newLocation.derementY();
+            GameHolder.currentAction = null;
             break;
         case MOVE_SOUTH:
+            newLocation = activeCharacter.getLocation().copy();
             newLocation.incrementY();
+            GameHolder.currentAction = null;
             break;
         case MOVE:
-            gotoLocation(activeCharacter, action.getLocation(), gameMap, true);
-            if (activeCharacter.getLocation().equals(action.getLocation())) {
+            newLocation = findNextStepLocation(activeCharacter, action.getLocation(), gameMap);
+            if (newLocation.equals(action.getLocation())) {
                 // if reached the target location then clear action
                 GameHolder.currentAction = null;
             }
-            return true;
+            break;
         default:
             // not a move action so return
             return false;
         }
 
-        GameHolder.currentAction = null;
-
         // begin move
-
         if (!gameMap.isMoveBlocked(newLocation.getX(), newLocation.getY())) {
             // target space is not blocked so we can move
 

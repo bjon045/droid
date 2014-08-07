@@ -60,6 +60,10 @@ public class Location {
         return newLocation;
     }
 
+    public boolean isNextTo(Location location) {
+        return (Math.abs(this.x - location.x) <= 1 && Math.abs(this.y - location.y) <= 1);
+    }
+
     @Override
     public boolean equals(Object o) {
         if ((o == null) || !(o instanceof Location)) {
