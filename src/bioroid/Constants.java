@@ -2,7 +2,7 @@ package bioroid;
 
 public class Constants {
 
-    public static final String RESOURCE_FOLDER = "resources";
+    public static final String RESOURCE_FOLDER = "resources_dev";
 
     public static final int TILE_SIZE = 32;
 
