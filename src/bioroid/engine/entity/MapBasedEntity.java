@@ -14,11 +14,11 @@ import static bioroid.Constants.TILE_SIZE;
  * 
  * @author Bruce Jones
  */
-public abstract class MapEntity extends Entity {
+public abstract class MapBasedEntity extends Entity {
 
     private boolean onMap;
 
-    public MapEntity(String imgRef, int x, int y, int size) {
+    public MapBasedEntity(String imgRef, int x, int y, int size) {
         super(x, y, TILE_SIZE * size, TILE_SIZE * size, 2);
         Image image;
         try {

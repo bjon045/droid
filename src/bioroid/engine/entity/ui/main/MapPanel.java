@@ -15,7 +15,7 @@ import bioroid.GameHolder;
 import bioroid.control.action.Action;
 import bioroid.control.action.ActionType;
 import bioroid.engine.entity.Entity;
-import bioroid.engine.entity.MapEntity;
+import bioroid.engine.entity.MapBasedEntity;
 import bioroid.engine.entity.PlayerCharacterEntity;
 import bioroid.engine.entity.listener.EntityListener;
 import bioroid.model.character.GameCharacter;
@@ -26,7 +26,7 @@ public class MapPanel extends Entity {
 
     private GameMap gameMap;
 
-    private List<MapEntity> entities = new ArrayList<MapEntity>();
+    private List<MapBasedEntity> entities = new ArrayList<MapBasedEntity>();
 
     // location where the map should be centered (in tiles not pixels)
     private Location viewPoint;
@@ -119,7 +119,7 @@ public class MapPanel extends Entity {
         }
 
         // update npc render offsets as they may have moved!
-        for (MapEntity e : entities) {
+        for (MapBasedEntity e : entities) {
             e.updateRenderLocation(mapOffsetX, mapOffsetY, mapStartX, mapStartY, mapEndX, mapEndY);
         }
     }
@@ -143,7 +143,7 @@ public class MapPanel extends Entity {
     }
 
     @Override
-    public List<MapEntity> getChildren() {
+    public List<MapBasedEntity> getChildren() {
         return entities;
     }
 

@@ -5,7 +5,7 @@ import bioroid.model.location.Location;
 
 import static bioroid.Constants.RESOURCE_FOLDER;
 
-public class PlayerCharacterEntity extends MapEntity {
+public class PlayerCharacterEntity extends MapBasedEntity {
 
     private GameCharacter person;
 
