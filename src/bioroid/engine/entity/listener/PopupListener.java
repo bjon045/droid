@@ -4,7 +4,7 @@ import bioroid.Constants;
 import bioroid.control.EntityManager;
 import bioroid.engine.entity.Entity;
 import bioroid.engine.entity.StringEntity;
-import bioroid.engine.entity.ui.BackgroundPanel;
+import bioroid.engine.entity.ui.BorderedPanel;
 import bioroid.model.location.Location;
 import bioroid.utils.StringUtils;
 
@@ -22,7 +22,7 @@ public class PopupListener implements EntityListener {
         if (StringUtils.isBlank(popupText)) {
             return;
         }
-        BackgroundPanel popupPanel = EntityManager.getPopupPanel();
+        BorderedPanel popupPanel = EntityManager.getPopupPanel();
         popupPanel.setActive(true);
         int startX = e.getX() + e.getWidth();
         int startY = e.getY() + e.getHeight();
@@ -45,7 +45,7 @@ public class PopupListener implements EntityListener {
         if (StringUtils.isBlank(popupText)) {
             return;
         }
-        BackgroundPanel popupPanel = EntityManager.getPopupPanel();
+        BorderedPanel popupPanel = EntityManager.getPopupPanel();
         popupPanel.setActive(false);
     }
 

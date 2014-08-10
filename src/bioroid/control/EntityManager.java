@@ -10,6 +10,7 @@ import bioroid.Constants;
 import bioroid.GameMode;
 import bioroid.engine.entity.Entity;
 import bioroid.engine.entity.ui.BackgroundPanel;
+import bioroid.engine.entity.ui.BorderedPanel;
 import bioroid.engine.entity.ui.StartMenuPanel;
 import bioroid.engine.entity.ui.main.CharacterPanel;
 import bioroid.engine.entity.ui.main.MapPanel;
@@ -34,7 +35,7 @@ public final class EntityManager {
 
     private static SkillSelectionPanel skillSelectionPanel;
 
-    private static BackgroundPanel popupPanel;
+    private static BorderedPanel popupPanel;
 
     public static List<Entity> getEntities(GameMode mode) {
         switch (mode) {
@@ -68,9 +69,9 @@ public final class EntityManager {
         return backgroundPanel;
     }
 
-    public static BackgroundPanel getPopupPanel() {
+    public static BorderedPanel getPopupPanel() {
         if (popupPanel == null) {
-            popupPanel = new BackgroundPanel(0, 0, 0, 0);
+            popupPanel = new BorderedPanel(0, 0, 0, 0);
             popupPanel.setActive(false);
             popupPanel.setBackground(Color.gray);
         }
