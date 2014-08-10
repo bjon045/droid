@@ -6,6 +6,7 @@ import bioroid.GameHolder;
 import bioroid.control.action.Action;
 import bioroid.control.action.ActionType;
 import bioroid.engine.entity.Entity;
+import bioroid.engine.entity.EntityManager;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Input;

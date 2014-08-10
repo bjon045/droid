@@ -3,6 +3,7 @@ package bioroid.control;
 import java.util.List;
 
 import bioroid.GameHolder;
+import bioroid.engine.entity.EntityManager;
 import bioroid.model.ModelResources;
 import bioroid.model.character.GameCharacter;
 import bioroid.model.event.Event;

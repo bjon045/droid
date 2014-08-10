@@ -1,8 +1,8 @@
 package bioroid.engine.entity.listener;
 
 import bioroid.Constants;
-import bioroid.control.EntityManager;
 import bioroid.engine.entity.Entity;
+import bioroid.engine.entity.EntityManager;
 import bioroid.engine.entity.StringEntity;
 import bioroid.engine.entity.ui.BorderedPanel;
 import bioroid.model.location.Location;

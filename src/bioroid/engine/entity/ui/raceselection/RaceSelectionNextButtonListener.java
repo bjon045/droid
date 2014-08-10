@@ -2,8 +2,8 @@ package bioroid.engine.entity.ui.raceselection;
 
 import bioroid.GameHolder;
 import bioroid.GameMode;
-import bioroid.control.EntityManager;
 import bioroid.engine.entity.Entity;
+import bioroid.engine.entity.EntityManager;
 import bioroid.engine.entity.listener.EntityListener;
 
 public class RaceSelectionNextButtonListener implements EntityListener {

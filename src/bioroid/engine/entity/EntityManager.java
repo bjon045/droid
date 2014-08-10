@@ -1,4 +1,4 @@
-package bioroid.control;
+package bioroid.engine.entity;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +8,6 @@ import org.newdawn.slick.Color;
 
 import bioroid.Constants;
 import bioroid.GameMode;
-import bioroid.engine.entity.Entity;
 import bioroid.engine.entity.ui.BackgroundPanel;
 import bioroid.engine.entity.ui.BorderedPanel;
 import bioroid.engine.entity.ui.StartMenuPanel;

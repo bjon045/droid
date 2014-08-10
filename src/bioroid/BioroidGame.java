@@ -10,8 +10,8 @@ import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
 import bioroid.control.CoreGameController;
-import bioroid.control.EntityManager;
 import bioroid.engine.entity.Entity;
+import bioroid.engine.entity.EntityManager;
 import bioroid.model.ModelResources;
 
 public class BioroidGame implements Game {

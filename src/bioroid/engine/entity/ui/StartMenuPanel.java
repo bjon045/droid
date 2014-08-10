@@ -10,8 +10,8 @@ import org.newdawn.slick.SlickException;
 
 import bioroid.GameHolder;
 import bioroid.GameMode;
-import bioroid.control.EntityManager;
 import bioroid.engine.entity.Entity;
+import bioroid.engine.entity.EntityManager;
 import bioroid.engine.entity.StaticImageEntity;
 import bioroid.engine.entity.StringEntity;
 import bioroid.engine.entity.listener.EntityListener;
