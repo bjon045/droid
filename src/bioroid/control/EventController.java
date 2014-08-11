@@ -3,7 +3,7 @@ package bioroid.control;
 import java.util.List;
 
 import bioroid.GameHolder;
-import bioroid.engine.entity.EntityManager;
+import bioroid.engine.entity.ui.dialog.DialogGenerator;
 import bioroid.model.ModelResources;
 import bioroid.model.character.GameCharacter;
 import bioroid.model.event.Event;
@@ -45,7 +45,7 @@ public class EventController {
         // TODO: requirement: implement event actions
         System.out.println("Event Triggered: " + event.getCode());
         if (event.getEventType() == EventType.MESSAGE) {
-            EntityManager.getPopupPanel();
+            DialogGenerator.createDialog(event.getDescription());
         }
     }
 
