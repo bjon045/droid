@@ -2,14 +2,14 @@ package bioroid.control;
 
 import java.util.List;
 
+import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.Input;
+
 import bioroid.GameHolder;
 import bioroid.control.action.Action;
 import bioroid.control.action.ActionType;
 import bioroid.engine.entity.Entity;
 import bioroid.engine.entity.EntityManager;
-
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Input;
 
 public class InputController {
 
@@ -19,14 +19,16 @@ public class InputController {
         int mx = input.getMouseX();
         int my = input.getMouseY();
         boolean leftMouseClick = input.isMousePressed(Input.MOUSE_LEFT_BUTTON);
-
         // get entity mouse is over
         List<Entity> entities = EntityManager.getEntities(GameHolder.gameMode);
-        Entity e = processEntities(mx, my, entities);
-
+        Entity e = processEntities(mx, my, entities, true);
         // click on entity
         if ((e != null) && leftMouseClick) {
             e.mousePressed(mx, my);
+        }
+
+        if (GameHolder.blockingEntity != null) {
+            return;
         }
 
         // capture keyboard events
@@ -43,18 +45,20 @@ public class InputController {
         }
     }
 
-    private Entity processEntities(int mx, int my, List<? extends Entity> entities) {
+    private Entity processEntities(int mx, int my, List<? extends Entity> entities, boolean parentEntities) {
         Entity currentEntity = null;
-
-        Entity e;
-        for (int i = entities.size() - 1; i >= 0; i--) {
-            e = entities.get(i);
+        for (Entity e : entities) {
+            if (parentEntities && GameHolder.blockingEntity != null && GameHolder.blockingEntity != e) {
+                continue;
+            }
             if (e.inside(mx, my)) {
+
                 if (!e.isMouseInside()) {
                     e.mouseEntered();
                 }
                 if (e.getChildren() != null) {
-                    Entity e2 = processEntities(mx, my, e.getChildren());
+
+                    Entity e2 = processEntities(mx, my, e.getChildren(), false);
                     if ((e2 != null) && (currentEntity == null)) {
                         currentEntity = e2;
                     }
@@ -64,6 +68,7 @@ public class InputController {
                 }
 
             } else {
+
                 updateMouseNotInside(e);
             }
             // mouse not over and was never inside
@@ -73,6 +78,7 @@ public class InputController {
     }
 
     private void updateMouseNotInside(Entity e) {
+
         if (e.isMouseInside()) {
             // mouse is no longer inside
             e.mouseExited();

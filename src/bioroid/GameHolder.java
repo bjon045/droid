@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import bioroid.control.action.Action;
+import bioroid.engine.entity.Entity;
 import bioroid.model.CodeAndValue;
 import bioroid.model.character.GameCharacter;
 import bioroid.model.game.SavedGame;
@@ -21,11 +22,19 @@ public class GameHolder {
 
     public static Map<String, GameMap> maps = new HashMap<String, GameMap>();
 
+    // map window x,y focus point
     public static Location viewPoint;
 
+    // Not currently implement but will enable turn based movement
     public static boolean combatMode;
 
+    // This is set by InputController or a listener i..e MapListener (see MapPanel)
+    // the current action will be processed by the CoreGameController
     public static Action currentAction;
+
+    // represents a screen entity which blocks all other input
+    // i.e. a popup dialog that needs to be closed.
+    public static Entity blockingEntity;
 
     public static class CharacterGenerationHolder {
 

@@ -3,6 +3,8 @@ package bioroid.control;
 import java.util.List;
 
 import bioroid.GameHolder;
+import bioroid.engine.entity.Entity;
+import bioroid.engine.entity.listener.EntityListener;
 import bioroid.engine.entity.ui.dialog.DialogGenerator;
 import bioroid.model.ModelResources;
 import bioroid.model.character.GameCharacter;
@@ -46,6 +48,25 @@ public class EventController {
         System.out.println("Event Triggered: " + event.getCode());
         if (event.getEventType() == EventType.MESSAGE) {
             DialogGenerator.createDialog(event.getDescription());
+            DialogGenerator.addButton("close", new CloseEventListener());
+        }
+    }
+
+    public class CloseEventListener implements EntityListener {
+
+        @Override
+        public void mouseEntered(Entity e) {
+
+        }
+
+        @Override
+        public void mouseExited(Entity e) {
+
+        }
+
+        @Override
+        public void mousePressed(Entity e, int mouseX, int mouseY) {
+            DialogGenerator.removeDialog();
         }
     }
 

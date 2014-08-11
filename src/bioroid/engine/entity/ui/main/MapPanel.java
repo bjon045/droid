@@ -167,6 +167,9 @@ public class MapPanel extends Entity {
 
         @Override
         public void mousePressed(Entity e, int mouseX, int mouseY) {
+            if (GameHolder.blockingEntity != null) {
+                return;
+            }
             int x = mouseX - mapPanel.mapOffsetX;
             int y = mouseY - mapPanel.mapOffsetY;
             x = x / TILE_SIZE;
