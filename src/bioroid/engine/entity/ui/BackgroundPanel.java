@@ -63,4 +63,9 @@ public class BackgroundPanel extends BorderedPanel {
         return getMainHeight();
     }
 
+    @Override
+    public boolean inside(int xp, int yp) {
+        return false;
+    }
+
 }

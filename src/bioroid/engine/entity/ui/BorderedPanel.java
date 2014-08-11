@@ -100,11 +100,6 @@ public class BorderedPanel extends Entity {
     }
 
     @Override
-    public boolean inside(int xp, int yp) {
-        return false;
-    }
-
-    @Override
     public List<Entity> getChildren() {
         return children;
     }
