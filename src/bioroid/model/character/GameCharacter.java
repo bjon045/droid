@@ -2,16 +2,16 @@ package bioroid.model.character;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlElement;
 
-import bioroid.model.CodeAndValue;
-import bioroid.model.location.Location;
+import javax.xml.bind.annotation.XmlElement;
 
 import org.newdawn.slick.util.pathfinding.Mover;
 
-public class GameCharacter implements Mover {
+import bioroid.model.CodeAndValue;
+import bioroid.model.ModelObject;
+import bioroid.model.location.Location;
 
-    private String name;
+public class GameCharacter extends ModelObject implements Mover {
 
     private String race;
 
@@ -31,13 +31,7 @@ public class GameCharacter implements Mover {
 
     private String spriteName;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    private String mapCode;
 
     public String getRace() {
         return race;
@@ -111,6 +105,14 @@ public class GameCharacter implements Mover {
 
     public void setSpriteName(String spriteName) {
         this.spriteName = spriteName;
+    }
+
+    public String getMapCode() {
+        return mapCode;
+    }
+
+    public void setMapCode(String mapCode) {
+        this.mapCode = mapCode;
     }
 
 }

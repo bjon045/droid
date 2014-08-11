@@ -3,11 +3,4 @@
 	<name>Start test map</name>
 	<description></description>
 	<tmxFile>testmap.tmx</tmxFile>
-	<npc>
-		<name></name>
-		<location>
-			<x>1</x>
-			<y>1</y>
-		</location>
-	</npc>
 </gameMap>

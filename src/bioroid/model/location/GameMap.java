@@ -2,8 +2,6 @@ package bioroid.model.location;
 
 import static bioroid.Constants.RESOURCE_FOLDER;
 
-import java.util.List;
-
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -24,8 +22,6 @@ public class GameMap extends ModelObject implements TileBasedMap {
 
     private String tmxFile;
 
-    private List<GameCharacter> npc;
-
     private TiledMap map;
 
     private PathFinder pathFinder;
@@ -42,14 +38,6 @@ public class GameMap extends ModelObject implements TileBasedMap {
         } catch (SlickException e) {
             throw new RuntimeException();
         }
-    }
-
-    public List<GameCharacter> getNpc() {
-        return npc;
-    }
-
-    public void setNpc(List<GameCharacter> npc) {
-        this.npc = npc;
     }
 
     @XmlTransient

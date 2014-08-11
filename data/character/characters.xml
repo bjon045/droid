@@ -1,0 +1,13 @@
+<characters>
+	<character>
+	   <code>CHAR01</code>
+       <name>Bruce Jones</name>
+       <description>A Software Engineer.</description>
+       <spriteName>bald_man_pistol.png</spriteName>
+       <location>
+            <x>7</x>
+            <y>25</y>
+       </location>
+       <mapCode>MAP_START</mapCode>
+	</character>
+</characters>

@@ -6,6 +6,7 @@ import java.util.Map;
 
 import bioroid.model.attribute.Attributes;
 import bioroid.model.career.Careers;
+import bioroid.model.character.Characters;
 import bioroid.model.event.Events;
 import bioroid.model.item.Accessories;
 import bioroid.model.item.Armours;
@@ -34,6 +35,8 @@ public class ModelResources {
     public static Attributes attributes;
 
     public static Events events;
+
+    public static Characters characters;
 
     public static Map<String, ModelObject> modelObjects = new HashMap<String, ModelObject>();
 
@@ -67,6 +70,9 @@ public class ModelResources {
 
         events = ModelUtils.loadModelObject(Events.class, "/event/events.xml");
         addItems(modelObjects, events.getEvents());
+
+        characters = ModelUtils.loadModelObject(Characters.class, "/character/characters.xml");
+        addItems(modelObjects, characters.getCharacters());
 
         // validation block
         validate(modelObjects);
