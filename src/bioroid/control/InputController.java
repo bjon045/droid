@@ -10,6 +10,9 @@ import bioroid.control.action.Action;
 import bioroid.control.action.ActionType;
 import bioroid.engine.entity.Entity;
 import bioroid.engine.entity.EntityManager;
+import bioroid.engine.entity.ui.BackgroundPanel;
+import bioroid.engine.entity.ui.main.CharacterPanel;
+import bioroid.model.location.Location;
 
 public class InputController {
 
@@ -42,6 +45,16 @@ public class InputController {
             GameHolder.currentAction = new Action(ActionType.MOVE_SOUTH);
         } else if (container.getInput().isKeyPressed(Input.KEY_SPACE)) {
             GameHolder.currentAction = new Action(ActionType.PASS);
+        } else if (container.getInput().isKeyPressed(Input.KEY_ESCAPE)) {
+            // GameLoader.saveGame("test");
+            container.exit();
+        } else if (container.getInput().isKeyPressed(Input.KEY_C)) {
+            CharacterPanel charPanel = EntityManager.getCharacterPanel();
+            charPanel.setActive(!charPanel.isActive());
+            BackgroundPanel backgroundPanel = EntityManager.getBackgroundPanel();
+            Location mainPanelLocation = backgroundPanel.getMainStart();
+            EntityManager.getMapPanel().updatePosition(mainPanelLocation.getX(), mainPanelLocation.getY(),
+                    backgroundPanel.getMapWidth(), backgroundPanel.getMainHeight());
         }
     }
 

@@ -10,6 +10,7 @@ import org.newdawn.slick.SlickException;
 import bioroid.Constants;
 import bioroid.GameHolder;
 import bioroid.GameMode;
+import bioroid.engine.entity.EntityManager;
 
 public class BackgroundPanel extends BorderedPanel {
 
@@ -36,7 +37,7 @@ public class BackgroundPanel extends BorderedPanel {
     @Override
     protected void renderEntitySpecific(GameContainer container, Graphics g) {
         super.renderEntitySpecific(container, g);
-        if (GameHolder.gameMode == GameMode.MAIN_GAME) {
+        if (GameHolder.gameMode == GameMode.MAIN_GAME && EntityManager.getCharacterPanel().isActive()) {
             // center border
             g.rotate(getX(), getY(), 90);
             horizontalBorder.draw(getX(), ((getY() - getWidth()) + charPanelXSize) - borderThickness, getHeight(),
@@ -56,7 +57,7 @@ public class BackgroundPanel extends BorderedPanel {
     }
 
     public int getMapWidth() {
-        return (getWidth() - charPanelXSize) - borderThickness;
+        return (getWidth() - (EntityManager.getCharacterPanel().isActive() ? charPanelXSize : 0)) - borderThickness;
     }
 
     public int getMapHeight() {

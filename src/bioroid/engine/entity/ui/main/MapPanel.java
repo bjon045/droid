@@ -48,6 +48,21 @@ public class MapPanel extends Entity {
         }
         super.setImage(mapBackground);
 
+        determineOptimumPosition();
+
+        setListener(new MapPanelListener(this));
+    }
+
+    public void updatePosition(int x, int y, int width, int height) {
+        setX(x);
+        setY(y);
+        setWidth(width);
+        setHeight(height);
+        determineOptimumPosition();
+        updateOffsets();
+    }
+
+    private void determineOptimumPosition() {
         mapHeight = getHeight() / TILE_SIZE;
         mapWidth = getWidth() / TILE_SIZE;
         mapHalfHeight = mapHeight / 2;
@@ -64,8 +79,6 @@ public class MapPanel extends Entity {
 
         setWidth(getWidth() - widthRemainder);
         setHeight(getHeight() - heightRemainder);
-
-        setListener(new MapPanelListener(this));
     }
 
     @Override

@@ -6,7 +6,6 @@ import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.Game;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
 import bioroid.control.CoreGameController;
@@ -57,10 +56,6 @@ public class BioroidGame implements Game {
             entity.update(delta);
         }
 
-        if (container.getInput().isKeyPressed(Input.KEY_ESCAPE)) {
-            // GameLoader.saveGame("test");
-            container.exit();
-        }
     }
 
     @Override
