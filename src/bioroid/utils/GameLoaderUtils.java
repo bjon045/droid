@@ -3,6 +3,8 @@ package bioroid.utils;
 import java.io.File;
 
 import bioroid.GameHolder;
+import bioroid.model.ModelResources;
+import bioroid.model.character.GameCharacter;
 import bioroid.model.game.SavedGame;
 import bioroid.model.location.GameMap;
 import bioroid.model.location.Maps;
@@ -28,6 +30,15 @@ public class GameLoaderUtils {
                 mapObj = ModelUtils.loadModelObject(GameMap.class, "/maps/" + map + "/map.xml");
             }
             GameHolder.maps.put(mapObj.getCode(), mapObj);
+
+            // TODO: requirement: preload events and maps
+            // NPC state needs to be adjusted based on game state i.e if npc is dead or moved.
+            for (GameCharacter character : ModelResources.characters.getCharacters()) {
+                if (StringUtils.equals(character.getMapCode(), mapObj.getCode())) {
+                    mapObj.getNpc().add(character);
+                }
+            }
+
         }
     }
 

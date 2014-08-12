@@ -140,6 +140,11 @@ public class MapPanel extends Entity {
             PlayerCharacterEntity pce = new PlayerCharacterEntity(pc);
             entities.add(pce);
         }
+        // load NPC entities onto map
+        for (GameCharacter pc : gameMap.getNpc()) {
+            PlayerCharacterEntity pce = new PlayerCharacterEntity(pc);
+            entities.add(pce);
+        }
     }
 
     @Override
