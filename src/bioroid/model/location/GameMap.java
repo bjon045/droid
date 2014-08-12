@@ -102,7 +102,12 @@ public class GameMap extends ModelObject implements TileBasedMap {
 
         boolean blocked = isMoveBlocked(tx, ty);
         // System.out.println("x:" + tx + " y:" + ty + " blocked:" + blocked);
-        // TODO: reqiurement: check for immovable characters i..e non party
+
+        for (GameCharacter character : npc) {
+            if (character.getLocation().equals(tx, ty)) {
+                return true;
+            }
+        }
 
         return blocked;
     }
