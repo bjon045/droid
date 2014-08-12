@@ -57,7 +57,8 @@ public class BackgroundPanel extends BorderedPanel {
     }
 
     public int getMapWidth() {
-        return (getWidth() - (EntityManager.getCharacterPanel().isActive() ? charPanelXSize : 0)) - borderThickness;
+        return (getWidth() - (EntityManager.getCharacterPanel().isActive() ? charPanelXSize : borderThickness))
+                - borderThickness;
     }
 
     public int getMapHeight() {
