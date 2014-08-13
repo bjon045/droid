@@ -45,6 +45,7 @@ public class EventController {
 
     private void handleEvent(Event event) {
         // TODO: requirement: implement event actions
+        GameHolder.currentAction = null;
         System.out.println("Event Triggered: " + event.getCode());
         if (event.getEventType() == EventType.MESSAGE) {
             DialogGenerator.createDialog(event.getDescription());
