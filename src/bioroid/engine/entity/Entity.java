@@ -52,7 +52,6 @@ public abstract class Entity implements Comparable<Entity> {
             g.fillRect(x, y, width, height);
         }
         if (backgroundImage != null) {
-            System.out.println("test");
             backgroundImage.draw(x, y, width, height);
         }
         if (drawBorder) {
