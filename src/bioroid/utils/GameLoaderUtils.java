@@ -13,9 +13,9 @@ public class GameLoaderUtils {
 
     public static void loadGame(String name) {
         GameHolder.currentGame = ModelUtils.loadModelObject(SavedGame.class, new File("saves/" + name + "/game.xml"));
-
+        GameHolder.activeCharacter = CharacterUtils.getMainCharacter();
         // on first load set the game view point to the main character location
-        GameHolder.viewPoint = CharacterUtils.getMainCharacter().getLocation().copy();
+        GameHolder.viewPoint = GameHolder.activeCharacter.getLocation().copy();
 
         // load any available maps
         Maps maps = ModelUtils.loadModelObject(Maps.class, "/maps/maps.xml");
@@ -41,7 +41,6 @@ public class GameLoaderUtils {
 
         }
 
-        GameHolder.activeCharacter = CharacterUtils.getMainCharacter();
     }
 
     public static void saveGame(String name) {
