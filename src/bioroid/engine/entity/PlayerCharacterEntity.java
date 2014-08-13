@@ -1,9 +1,10 @@
 package bioroid.engine.entity;
 
+import static bioroid.Constants.RESOURCE_FOLDER;
+import bioroid.Constants;
+import bioroid.GameHolder;
 import bioroid.model.character.GameCharacter;
 import bioroid.model.location.Location;
-
-import static bioroid.Constants.RESOURCE_FOLDER;
 
 public class PlayerCharacterEntity extends MapBasedEntity {
 
@@ -21,7 +22,12 @@ public class PlayerCharacterEntity extends MapBasedEntity {
 
     @Override
     public void update(int delta) {
-        // not needed for player character
+        // TODO: optimisation this should only be done once, ideally when active character is set.
+        if (GameHolder.activeCharacter == person) {
+            setBackgroundImage(Constants.ACTIVE_CHARACTER_BACKGROUND);
+        } else {
+            setBackground(null);
+        }
     }
 
 }

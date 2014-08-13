@@ -19,8 +19,6 @@ public class SavedGame {
 
     private String currentMapCode;
 
-    private int activeCharacter;
-
     @XmlElement(name = "playerCharacter")
     public List<GameCharacter> getPlayerCharacters() {
         return playerCharacters;
@@ -36,14 +34,6 @@ public class SavedGame {
 
     public void setCurrentMapCode(String currentMapCode) {
         this.currentMapCode = currentMapCode;
-    }
-
-    public int getActiveCharacter() {
-        return activeCharacter;
-    }
-
-    public void setActiveCharacter(int activeCharacter) {
-        this.activeCharacter = activeCharacter;
     }
 
 }

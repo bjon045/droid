@@ -1,5 +1,8 @@
 package bioroid;
 
+import org.newdawn.slick.Image;
+import org.newdawn.slick.SlickException;
+
 public class Constants {
 
     public static final String RESOURCE_FOLDER = "resources_dev";
@@ -35,4 +38,14 @@ public class Constants {
     public static final String LINE_BREAK = "/b";
 
     public static final String ADD_LINE_BREAK = " /b ";
+
+    public static final Image ACTIVE_CHARACTER_BACKGROUND;
+    static {
+        try {
+            ACTIVE_CHARACTER_BACKGROUND = new Image(RESOURCE_FOLDER + "/active.png");
+        } catch (SlickException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

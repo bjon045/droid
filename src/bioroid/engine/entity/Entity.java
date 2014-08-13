@@ -2,19 +2,21 @@ package bioroid.engine.entity;
 
 import java.util.List;
 
-import bioroid.engine.entity.listener.EntityListener;
-import bioroid.utils.CollectionUtils;
-
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
+
+import bioroid.engine.entity.listener.EntityListener;
+import bioroid.utils.CollectionUtils;
 
 public abstract class Entity implements Comparable<Entity> {
 
     private int x, y, width, height;
 
     private Image image;
+
+    private Image backgroundImage;
 
     private Color background; // null -> transparent/ignore
 
@@ -48,6 +50,10 @@ public abstract class Entity implements Comparable<Entity> {
         if (background != null) {
             g.setColor(background);
             g.fillRect(x, y, width, height);
+        }
+        if (backgroundImage != null) {
+            System.out.println("test");
+            backgroundImage.draw(x, y, width, height);
         }
         if (drawBorder) {
             g.setLineWidth(5);
@@ -204,6 +210,10 @@ public abstract class Entity implements Comparable<Entity> {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public void setBackgroundImage(Image backgroundImage) {
+        this.backgroundImage = backgroundImage;
     }
 
 }

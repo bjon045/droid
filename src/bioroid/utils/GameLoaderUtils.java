@@ -40,6 +40,8 @@ public class GameLoaderUtils {
             }
 
         }
+
+        GameHolder.activeCharacter = CharacterUtils.getMainCharacter();
     }
 
     public static void saveGame(String name) {

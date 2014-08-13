@@ -134,6 +134,7 @@ public class MapPanel extends Entity {
         // update npc render offsets as they may have moved!
         for (MapBasedEntity e : entities) {
             e.updateRenderLocation(mapOffsetX, mapOffsetY, mapStartX, mapStartY, mapEndX, mapEndY);
+            e.update(delta);
         }
     }
 

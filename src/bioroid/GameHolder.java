@@ -22,6 +22,8 @@ public class GameHolder {
 
     public static Map<String, GameMap> maps = new HashMap<String, GameMap>();
 
+    public static GameCharacter activeCharacter;
+
     // map window x,y focus point
     public static Location viewPoint;
 
