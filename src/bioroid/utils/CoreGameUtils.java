@@ -3,13 +3,15 @@ package bioroid.utils;
 import java.io.File;
 
 import bioroid.GameHolder;
+import bioroid.GameMode;
+import bioroid.engine.entity.EntityManager;
 import bioroid.model.ModelResources;
 import bioroid.model.character.GameCharacter;
 import bioroid.model.game.SavedGame;
 import bioroid.model.location.GameMap;
 import bioroid.model.location.Maps;
 
-public class GameLoaderUtils {
+public class CoreGameUtils {
 
     public static void loadGame(String name) {
         GameHolder.currentGame = ModelUtils.loadModelObject(SavedGame.class, new File("saves/" + name + "/game.xml"));
@@ -38,9 +40,25 @@ public class GameLoaderUtils {
                     mapObj.getNpc().add(character);
                 }
             }
-
         }
 
+        performMapTransistion();
+
+        GameHolder.gameMode = GameMode.MAIN_GAME;
+
+    }
+
+    private static void performMapTransistion() {
+        GameHolder.allCharactersOnMap.clear();
+        GameHolder.allCharactersOnMap.addAll(GameHolder.currentGame.getPlayerCharacters());
+
+        GameMap gameMap = GameHolder.maps.get(GameHolder.currentGame.getCurrentMapCode());
+        GameHolder.currentMap = gameMap;
+        EntityManager.getMapPanel().setGameMap(gameMap);
+
+        GameHolder.allCharactersOnMap.addAll(GameHolder.currentMap.getNpc());
+        // TODO: sort list based on order of action
+        EntityManager.getMapPanel().reset();
     }
 
     public static void saveGame(String name) {

@@ -15,7 +15,7 @@ import bioroid.engine.entity.EntityManager;
 import bioroid.engine.entity.StaticImageEntity;
 import bioroid.engine.entity.StringEntity;
 import bioroid.engine.entity.listener.EntityListener;
-import bioroid.utils.GameLoaderUtils;
+import bioroid.utils.CoreGameUtils;
 
 public class StartMenuPanel extends Entity {
 
@@ -70,7 +70,7 @@ public class StartMenuPanel extends Entity {
 
         @Override
         public void mousePressed(Entity e, int mouseX, int mouseY) {
-            GameLoaderUtils.newGame();
+            CoreGameUtils.newGame();
             EntityManager.getPartyGenerationPanel().reset();
             GameHolder.gameMode = GameMode.PARTY_GENERATION;
         }
@@ -91,12 +91,7 @@ public class StartMenuPanel extends Entity {
 
         @Override
         public void mousePressed(Entity e, int mouseX, int mouseY) {
-            GameLoaderUtils.loadGame("test");
-            GameHolder.gameMode = GameMode.MAIN_GAME;
-
-            // TODO implement menu UI's game system. current default to straight
-            // into map
-            EntityManager.getMapPanel().reset();
+            CoreGameUtils.loadGame("test");
         }
 
     }

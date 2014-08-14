@@ -48,6 +48,8 @@ public class InputController {
         } else if (container.getInput().isKeyPressed(Input.KEY_ESCAPE)) {
             // GameLoader.saveGame("test");
             container.exit();
+        } else if (container.getInput().isKeyPressed(Input.KEY_ENTER)) {
+            GameHolder.combatMode = true;
         } else if (container.getInput().isKeyPressed(Input.KEY_C)) {
             CharacterPanel charPanel = EntityManager.getCharacterPanel();
             charPanel.setActive(!charPanel.isActive());

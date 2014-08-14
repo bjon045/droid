@@ -1,5 +1,6 @@
 package bioroid;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +24,8 @@ public class GameHolder {
     public static Map<String, GameMap> maps = new HashMap<String, GameMap>();
 
     public static GameCharacter activeCharacter;
+
+    public static List<GameCharacter> allCharactersOnMap = new ArrayList<GameCharacter>();
 
     // map window x,y focus point
     public static Location viewPoint;

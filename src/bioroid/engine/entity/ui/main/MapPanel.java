@@ -142,8 +142,7 @@ public class MapPanel extends Entity {
      * Call this method on a map transition.
      */
     public void reset() {
-        gameMap = GameHolder.maps.get(GameHolder.currentGame.getCurrentMapCode());
-        GameHolder.currentMap = gameMap;
+
         viewPoint = GameHolder.viewPoint.copy();
         updateOffsets();
 
@@ -164,6 +163,10 @@ public class MapPanel extends Entity {
     @Override
     public List<MapBasedEntity> getChildren() {
         return entities;
+    }
+
+    public void setGameMap(GameMap gameMap) {
+        this.gameMap = gameMap;
     }
 
     public class MapPanelListener implements EntityListener {
